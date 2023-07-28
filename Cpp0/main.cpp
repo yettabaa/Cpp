@@ -1,23 +1,61 @@
-#include <iostream> // for std::cout and std::endl
+#include <string>
+#include <iostream>
+#include<iomanip>
+#include<strstream>
+#include <sstream>
+#include <string>
+class PhoneBook
+{
 
+};
 
-    // std::cout << "Enter a number: "; // ask user for a number
+class Contact
+{
+private:
+    std::string infos;
+public:
+    int i;
+    void add()
+    {
+        std::cout << "first name: " << std::flush;
+        std::cin >> infos;
+        std::cout << "last name: " << std::flush;
+        std::cin >> infos;
+        std::cout << "nickname: " << std::flush;
+        std::cin >> infos;
+        std::cout << "phone number: " << std::flush;
+        std::cin >> infos;
+        std::cout << "darkest secret: " << std::flush;
+        std::cin >> infos;
+        // std::cout << getline();
+        std::cout << infos;
+    }
+};
+std::string trim(std::string str, std::string str1)
+{
+    size_t i = 0;
+    size_t j = str.length();
 
-    // int x; // define variable x to hold user input (and zero-initialize it)
-    // std::cin >> x; // get number from keyboard and store it in variable x
-
-    // std::cout << "You entered " << x << '\n';
-    // char str[10] = "yassin";
+    if (!str[0])
+        return (str = "", str);
+    while (str[i] && !str1.find(str[i++]))
+        ;
+    while (--j && !str1.find(str[j]))
+        ;
+    (j +2 < i) && (j = 0);
+    (j +2 >= i) && (j = j +2 - i);
+    str = str.substr(i -1, j);
     
-    
-        // std::cout << str << '\n';
+    return (str);
+}
 int main()
 {
-    char *ch;
-    std::cout << "test: " ; std::cin >> ch;
-        std::cout << ch << std::endl;
-    // char ch;
-    // while (std::cin >> ch)
-    //     std::cout << ch;
-    return 0;
+    int i;
+    Contact s;
+    // std::string str;
+    // str = test(str);
+    // std::cout << str;
+
+    std::cout << trim("       ", " ") << std::endl; 
+    
 }

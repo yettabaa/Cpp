@@ -1,6 +1,6 @@
 CC = c++
 
-CFLAG = -Wall -Wextra -Werror -std=c++98
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 FILE = megaphone.cpp
 
@@ -11,7 +11,7 @@ NAME = Megaphone
 all:	$(NAME)
 
 $(NAME): $(OFILE)
-		$(CC) $(CFLAG) $(FILE) -o $(NAME)
+		$(CC) $(CFLAG) $(OFILE) -o $(NAME)
 
 clean:
 	rm -f $(NAME)		

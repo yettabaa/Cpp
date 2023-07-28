@@ -1,0 +1,2 @@
+- std::ws input manipulator tells std::cin to ignore any leading whitespace before extraction
+-size_t length() const; //it is a member function of std::string

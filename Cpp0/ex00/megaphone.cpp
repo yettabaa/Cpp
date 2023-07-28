@@ -6,24 +6,41 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 05:22:28 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/07/25 04:36:37 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/07/27 06:32:34 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream> // for std::cout and std::endl
+#include <iostream>
+#include <sstream>
+// int main(int ac, char **av)
+// {
+//     int i = 0;
 
-int main(int ac, char **av)
+//     if (ac == 1)
+//         return (std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *\n", 0);
+//     while (av[++i])
+//     {
+//         int j = -1;
+//         while (av[i][++j])
+//             (islower(av[i][j])) && (av[i][j] -= 32);
+//         std::cout << av[i];
+//     }
+//     std::cout << '\n';
+// }
+
+int main(int ac, char **av) 
 {
     int i = 0;
+    std::string tmp;;
+    std::stringstream av_cpp;
 
     if (ac == 1)
-        return (std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *\n", 0);
+        return (std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl, 0);
     while (av[++i])
-    {
-        int j = -1;
-        while (av[i][++j])
-            (islower(av[i][j])) && (av[i][j] -= 32);
-        std::cout << av[i];
-    }
-    std::cout << '\n';
+        av_cpp << av[i] && ((av[i +1] && *av[i +1]) && av_cpp << ' ');
+    i = -1;
+    std::getline(av_cpp, tmp);
+    while (tmp[++i])
+        (islower(tmp[i])) && (tmp[i] -= 32);
+    std::cout << tmp << std::endl;
 }
