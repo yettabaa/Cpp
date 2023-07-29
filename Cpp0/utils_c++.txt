@@ -1,2 +1,3 @@
 - std::ws input manipulator tells std::cin to ignore any leading whitespace before extraction
 -size_t length() const; //it is a member function of std::string
+-std::istream::eof(). This function returns a boolean value indicating whether the end-of-file flag is set.

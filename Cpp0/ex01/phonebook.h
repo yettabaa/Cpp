@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 00:57:17 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/07/28 04:35:19 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/07/29 04:49:09 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <iostream>
 #include <sstream>
 #include <iomanip>
-std::string _check(void);
+std::string _check(int &flag);
+std::string trim(std::string str, std::string str1);
 
 #endif

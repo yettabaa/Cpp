@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 00:57:01 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/07/28 01:50:55 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/07/29 04:49:58 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,12 @@ std::string trim(std::string str, std::string str1)
     return (str);
 }
 
-std::string _check(void)
+std::string _check(int &flag)
 {
     std::string str;
 
     std::getline(std::cin, str);
+    (std::cin.eof()) && (flag = 0);
     str = trim(str, " \t");
     // if (!str[0]) //change to c++ style
     //fild  of .. is emty

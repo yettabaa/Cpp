@@ -50,12 +50,19 @@ std::string trim(std::string str, std::string str1)
 }
 int main()
 {
-    int i;
+    long long i;
     Contact s;
-    // std::string str;
+    std::string str;
     // str = test(str);
     // std::cout << str;
-
-    std::cout << trim("       ", " ") << std::endl; 
+    std::cin >> i;
+    // std::cin.eof();
+    // std::cin.ignore();
+    std::getline(std::cin, str);
+    std::getline(std::cin, str);
+    // i << str;
+    printf("%lld\n", i);
+    std::cout << str << "\n";
+    // std::cout << trim("       ", " ") << std::endl; 
     
 }
