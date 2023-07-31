@@ -6,11 +6,11 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 00:57:01 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/07/29 04:49:58 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/07/30 00:46:22 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.h"
+#include "phonebook.hpp"
 
 std::string trim(std::string str, std::string str1)
 {
@@ -26,19 +26,31 @@ std::string trim(std::string str, std::string str1)
     (j +2 < i) && (j = 0);
     (j +2 >= i) && (j = j +2 - i);
     str = str.substr(i -1, j);
-    
     return (str);
 }
 
-std::string _check(int &flag)
+std::string _check(int field, int &flag)
 {
     std::string str;
+    int i = -1;
 
     std::getline(std::cin, str);
-    (std::cin.eof()) && (flag = 0);
+    if (std::cin.eof()) 
+    {
+        str = "";
+        return (flag = FALSE, str);
+    }
     str = trim(str, " \t");
-    // if (!str[0]) //change to c++ style
-    //fild  of .. is emty
-    //Contact save faild! you dont put this fild
+    if (field == 3)
+    {
+        while (str[++i])
+        {
+            if ((!(isdigit(str[0]) || str[0] == '+')) || (i && !isdigit(str[i])))
+            {
+                str = "";
+                flag = NOTDIGIT;
+            }
+        }
+    }
     return (str);
 }

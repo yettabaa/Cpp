@@ -1,68 +1,33 @@
 #include <string>
 #include <iostream>
 #include<iomanip>
-#include<strstream>
+
 #include <sstream>
 #include <string>
-class PhoneBook
-{
 
-};
-
-class Contact
+namespace Zab
 {
-private:
-    std::string infos;
-public:
     int i;
-    void add()
+    void puts()
     {
-        std::cout << "first name: " << std::flush;
-        std::cin >> infos;
-        std::cout << "last name: " << std::flush;
-        std::cin >> infos;
-        std::cout << "nickname: " << std::flush;
-        std::cin >> infos;
-        std::cout << "phone number: " << std::flush;
-        std::cin >> infos;
-        std::cout << "darkest secret: " << std::flush;
-        std::cin >> infos;
-        // std::cout << getline();
-        std::cout << infos;
+        i = 50;
+        std::cout << i << std::endl;
     }
 };
-std::string trim(std::string str, std::string str1)
-{
-    size_t i = 0;
-    size_t j = str.length();
 
-    if (!str[0])
-        return (str = "", str);
-    while (str[i] && !str1.find(str[i++]))
-        ;
-    while (--j && !str1.find(str[j]))
-        ;
-    (j +2 < i) && (j = 0);
-    (j +2 >= i) && (j = j +2 - i);
-    str = str.substr(i -1, j);
-    
-    return (str);
-}
 int main()
 {
-    long long i;
-    Contact s;
-    std::string str;
-    // str = test(str);
-    // std::cout << str;
-    std::cin >> i;
-    // std::cin.eof();
-    // std::cin.ignore();
-    std::getline(std::cin, str);
-    std::getline(std::cin, str);
-    // i << str;
-    printf("%lld\n", i);
-    std::cout << str << "\n";
-    // std::cout << trim("       ", " ") << std::endl; 
-    
+    int i;
+    // char       buf[17];
+    // time_t     now = time(0);
+    // struct tm  tstruct;
+    // tstruct = *localtime(&now);
+    // strftime(buf, sizeof(buf), "%Y%m%d_%H%M%S", &tstruct);
+
+    std::cout << "[" <<buf << "] ";
+    std::string s;
+
+    // Zab::puts();
+    // puts("pp");
+
 }

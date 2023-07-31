@@ -2,7 +2,7 @@ CC = c++
 
 CFLAG = -Wall -Wextra -Werror -std=c++98
 
-FILE = phonebook.cpp utils.cpp
+FILE = phonebook.cpp utils.cpp methods.cpp
 
 OFILE = $(FILE:.c=.o)
 
