@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 00:57:17 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/07/30 07:17:09 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/08/01 05:18:49 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 #define FALSE 0
 #define NOTDIGIT 2
 
-std::string _check(int field, int &flag);
+std::string _check(int field, int *flag);
 std::string trim(std::string str, std::string str1);
 
 class PhoneBook

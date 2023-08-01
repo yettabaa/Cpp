@@ -36,7 +36,7 @@ public:
 	bool	makeWithdrawal( int withdrawal );//4
 	int		checkAmount( void ) const; //last const, and it promises not to modify the non-static data members
 	void	displayStatus( void ) const;//2
-
+	
 
 private:
 

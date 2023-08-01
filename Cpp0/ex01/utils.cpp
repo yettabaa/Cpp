@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 00:57:01 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/07/30 00:46:22 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/08/01 05:18:18 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ std::string trim(std::string str, std::string str1)
     return (str);
 }
 
-std::string _check(int field, int &flag)
+std::string _check(int field, int *flag)
 {
     std::string str;
     int i = -1;
@@ -38,7 +38,7 @@ std::string _check(int field, int &flag)
     if (std::cin.eof()) 
     {
         str = "";
-        return (flag = FALSE, str);
+        return (*flag = FALSE, str);
     }
     str = trim(str, " \t");
     if (field == 3)
@@ -48,7 +48,7 @@ std::string _check(int field, int &flag)
             if ((!(isdigit(str[0]) || str[0] == '+')) || (i && !isdigit(str[i])))
             {
                 str = "";
-                flag = NOTDIGIT;
+                *flag = NOTDIGIT;
             }
         }
     }

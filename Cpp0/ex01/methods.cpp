@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/30 00:53:05 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/01 00:13:40 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/08/01 05:18:31 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void Contact::_add()
 	while (++i < 5 && ctrd)
 	{
 		std::cout << book[indx].field[i] << ": ";
-		book[indx].tmp[i] = _check(i, ctrd);
+		book[indx].tmp[i] = _check(i, &ctrd);
 	}
 	i = -1;
 	while (++i < 5 && ctrd)

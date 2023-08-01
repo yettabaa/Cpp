@@ -62,5 +62,6 @@
         "utility": "cpp",
         "vector": "cpp",
         "strstream": "cpp"
-    }
+    },
+    "files.autoSave": "onFocusChange"
 }

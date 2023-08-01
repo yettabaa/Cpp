@@ -2,18 +2,18 @@ CC = c++
 
 CFLAG = -Wall -Wextra -Werror -std=c++98
 
-FILES = phonebook.cpp utils.cpp methods.cpp
+FILES = main.cpp Zombie.cpp zombieHorde.cpp
 
 OFILES = $(FILES:.cpp=.o)
 
-NAME = phonebook
+NAME = zombie
 
 all:	$(NAME)
 
 $(NAME):	$(OFILES)
 		$(CC) $(OFILES) -o $(NAME)
 		 
-%.o: %.cpp phonebook.hpp
+%.o: %.cpp Zombie.hpp
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
