@@ -11,7 +11,7 @@ NAME = jod
 all:	$(NAME)
 
 $(NAME):	$(OFILES)
-		$(CC) $(OFILES) -o $(NAME)
+		$(CC) $(CFLAG) $(OFILES) -o $(NAME)
 		 
 %.o: %.cpp Account.hpp
 	$(CC) $(CFLAGS) -c $< -o $@

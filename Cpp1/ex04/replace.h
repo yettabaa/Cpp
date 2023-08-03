@@ -1,28 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.hpp                                         :+:      :+:    :+:   */
+/*   replace.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/01 05:31:57 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/02 01:47:46 by yettabaa         ###   ########.fr       */
+/*   Created: 2023/08/02 06:49:30 by yettabaa          #+#    #+#             */
+/*   Updated: 2023/08/02 06:51:01 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WEAPON_HPP
-#define WEAPON_HPP
+#ifndef REPLACE_H
+#define REPLACE_H
 
-#include<iostream>
-
-class Weapon
-{
-private:
-    std::string type;
-public:
-    Weapon(std::string weptype);
-    void setType(std::string newType);
-    const std::string& getType();
-};
+#include <iostream>
+#include <fstream>
+#include <string>
 
 #endif

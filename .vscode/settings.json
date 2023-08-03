@@ -61,7 +61,10 @@
         "unordered_map": "cpp",
         "utility": "cpp",
         "vector": "cpp",
-        "strstream": "cpp"
+        "strstream": "cpp",
+        "fstream": "cpp",
+        "deque": "cpp",
+        "stack": "cpp"
     },
-    "files.autoSave": "onFocusChange"
+    "files.autoSave": "afterDelay"
 }

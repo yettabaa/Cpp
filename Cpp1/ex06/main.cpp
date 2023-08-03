@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/01 05:31:57 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/02 01:47:46 by yettabaa         ###   ########.fr       */
+/*   Created: 2023/08/03 04:36:43 by yettabaa          #+#    #+#             */
+/*   Updated: 2023/08/03 04:36:51 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WEAPON_HPP
-#define WEAPON_HPP
+#include "Harl.hpp"
 
-#include<iostream>
-
-class Weapon
+int main(int ac, char **av)
 {
-private:
-    std::string type;
-public:
-    Weapon(std::string weptype);
-    void setType(std::string newType);
-    const std::string& getType();
-};
-
-#endif
+    Harl harl;
+    void (Harl::* ptr)(std::string);
+    
+    if (ac != 2)
+    {
+        std::cerr << "invalid number of argument!" << std::endl;
+        return (1);
+    }
+    ptr = &Harl::complain;
+    (harl.*ptr)(av[1]);
+    return(0);
+}

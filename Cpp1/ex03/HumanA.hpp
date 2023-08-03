@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 05:31:45 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/01 08:32:31 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/08/02 01:44:42 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,26 +19,10 @@ class HumanA
 {
 private:
     std::string name;
-    std::string type;
-    Weapon weapon;
+    Weapon &weapon;
 public:
-    HumanA(std::string name, Weapon weapon):name(name), weapon(weapon){}
-    // HumanA(void){}
-    // ~HumanA();
-    void attack()
-    {
-        type = weapon.getType();
-        std::cout << name << " attacks with their " << type << std::endl;
-    }
+    HumanA( std::string hum_name,  Weapon &hum_weapon);
+    void attack();
 };
-
-// HumanA::HumanA(/* args */)
-// {
-// }
-
-// HumanA::~HumanA()
-// {
-// }
-
 
 #endif

@@ -11,9 +11,9 @@ NAME = ex03
 all:	$(NAME)
 
 $(NAME):	$(OFILES)
-		$(CC) $(OFILES) -o $(NAME)
+		$(CC) $(CFLAG) $(OFILES) -o $(NAME)
 		 
-%.o: %.cpp Weapon.hpp HumanA.cpp HumanB.hpp
+%.o: %.cpp Weapon.hpp HumanA.hpp HumanB.hpp
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:

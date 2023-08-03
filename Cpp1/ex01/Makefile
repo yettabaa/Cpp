@@ -11,7 +11,7 @@ NAME = zombie
 all:	$(NAME)
 
 $(NAME):	$(OFILES)
-		$(CC) $(OFILES) -o $(NAME)
+		$(CC) $(CFLAG) $(OFILES) -o $(NAME)
 		 
 %.o: %.cpp Zombie.hpp
 	$(CC) $(CFLAGS) -c $< -o $@

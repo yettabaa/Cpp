@@ -11,7 +11,7 @@ NAME = Megaphone
 all:	$(NAME)
 
 $(NAME):	$(OFILES)
-		$(CC) $(OFILES) -o $(NAME)
+		$(CC) $(CFLAG) $(OFILES) -o $(NAME)
 
 clean:
 	rm -f $(OFILES)

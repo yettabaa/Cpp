@@ -2,19 +2,19 @@ CC = c++
 
 CFLAG = -Wall -Wextra -Werror -std=c++98
 
-FILES = phonebook.cpp utils.cpp methods.cpp
+FILES = main.cpp Harl.cpp
 
 OFILES = $(FILES:.cpp=.o)
 
-NAME = phonebook
+NAME = harlFilter
 
 all:	$(NAME)
 
 $(NAME):	$(OFILES)
 		$(CC) $(CFLAG) $(OFILES) -o $(NAME)
 		 
-%.o: %.cpp phonebook.hpp
-	$(CC) $(CFLAGS) -c $< -o $@
+%.o: %.cpp Harl.hpp
+	$(CC) $(CFLAG) $(CFLAGS) -c $< -o $@
 
 clean:
 	rm -f $(OFILES)
