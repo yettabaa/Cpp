@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 01:15:13 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/01 02:31:24 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/08/03 10:59:47 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,5 @@ public:
     ~Zombie();
     void announce( void );
 };
-Zombie* newZombie( std::string name );
-void randomChump( std::string name );
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 01:15:09 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/01 02:31:20 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/08/03 11:06:08 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ Zombie::Zombie(const std::string name) : name(name){} // porpuse naming
 
 Zombie::~Zombie()
 {
-    std::cout << name << ": destroyed"<< std::endl;
+    std::cout << name << ": destroyed" << std::endl;
 }
 
 void Zombie::announce( void )

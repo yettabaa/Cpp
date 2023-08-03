@@ -1,8 +1,8 @@
 CC = c++
 
-CFLAG = -Wall -Wextra -Werror -std=c++98
+FLAGS = -Wall -Wextra -Werror -std=c++98
 
-FILES = phonebook.cpp utils.cpp methods.cpp
+FILES = main.cpp PhoneBook.cpp Contact.cpp utils.cpp 
 
 OFILES = $(FILES:.cpp=.o)
 
@@ -11,10 +11,10 @@ NAME = phonebook
 all:	$(NAME)
 
 $(NAME):	$(OFILES)
-		$(CC) $(CFLAG) $(OFILES) -o $(NAME)
+		$(CC) $(FLAGS) $(OFILES) -o $(NAME)
 		 
 %.o: %.cpp phonebook.hpp
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(FLAGS) -c $< -o $@
 
 clean:
 	rm -f $(OFILES)

@@ -1,20 +1,20 @@
 CC = c++
 
-CFLAG = -Wall -Wextra -Werror -std=c++98
+FLAGS = -Wall -Wextra -Werror -std=c++98
 
 FILES = Account.cpp tests.cpp
 
 OFILES = $(FILES:.cpp=.o)
 
-NAME = jod
+NAME = account
 
 all:	$(NAME)
 
 $(NAME):	$(OFILES)
-		$(CC) $(CFLAG) $(OFILES) -o $(NAME)
+		$(CC) $(FLAGS) $(OFILES) -o $(NAME)
 		 
 %.o: %.cpp Account.hpp
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(FLAGS) -c $< -o $@
 
 clean:
 	rm -f $(OFILES)

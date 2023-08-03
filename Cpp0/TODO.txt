@@ -1,4 +1,5 @@
 - names spaces (theori && pratique)
+-default constructor
 -std::string (theori) hase and address ??we can use std::string *str whay  
 - fonctionement of read write
 - defrrent betwen if and oprator condition

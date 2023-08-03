@@ -1,6 +1,6 @@
 CC = c++
 
-CFLAG = -Wall -Wextra -Werror -std=c++98
+FLAGS = -Wall -Wextra -Werror -std=c++98
 
 FILES = main.cpp randomChump.cpp newZombie.cpp Zombie.cpp
 
@@ -11,10 +11,10 @@ NAME = zombie
 all:	$(NAME)
 
 $(NAME):	$(OFILES)
-		$(CC) $(CFLAG) $(OFILES) -o $(NAME)
+		$(CC) $(FLAGS) $(OFILES) -o $(NAME)
 		 
 %.o: %.cpp Zombie.hpp
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(FLAGS) -c $< -o $@
 
 clean:
 	rm -f $(OFILES)

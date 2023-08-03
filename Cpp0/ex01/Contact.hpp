@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/03 04:36:43 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/03 11:10:03 by yettabaa         ###   ########.fr       */
+/*   Created: 2023/08/03 09:48:37 by yettabaa          #+#    #+#             */
+/*   Updated: 2023/08/03 10:00:11 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
+#ifndef CONTACT_HPP
+#define CONTACT_HPP
 
-int main(int ac, char **av)
+#include <iomanip>
+
+class Contact
 {
-    Harl harl;
-    void (Harl::* ptr)(std::string);
-    
-    if (ac != 2)
-    {
-        std::cerr << "invalid number of argument!" << std::endl;
-        return (1);
-    }
-    ptr = &Harl::complain;
-    (harl.*ptr)(av[1]);
-    return(0);
-}
+public:
+	std::string field[5];
+	std::string info[5];
+	std::string tmp[5];
+	Contact();
+};
+
+#endif

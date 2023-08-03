@@ -6,11 +6,11 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 00:57:01 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/01 05:18:18 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/08/03 10:03:06 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.hpp"
+#include "PhoneBook.hpp"
 
 std::string trim(std::string str, std::string str1)
 {
@@ -37,8 +37,8 @@ std::string _check(int field, int *flag)
     std::getline(std::cin, str);
     if (std::cin.eof()) 
     {
-        str = "";
-        return (*flag = FALSE, str);
+        std::cout << std::endl;
+        exit(1);
     }
     str = trim(str, " \t");
     if (field == 3)

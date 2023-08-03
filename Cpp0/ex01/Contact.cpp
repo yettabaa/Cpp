@@ -1,28 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/03 04:36:43 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/03 11:10:03 by yettabaa         ###   ########.fr       */
+/*   Created: 2023/08/03 09:48:41 by yettabaa          #+#    #+#             */
+/*   Updated: 2023/08/03 09:53:39 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
+#include "Contact.hpp"
 
-int main(int ac, char **av)
+Contact::Contact()
 {
-    Harl harl;
-    void (Harl::* ptr)(std::string);
-    
-    if (ac != 2)
-    {
-        std::cerr << "invalid number of argument!" << std::endl;
-        return (1);
-    }
-    ptr = &Harl::complain;
-    (harl.*ptr)(av[1]);
-    return(0);
+	field[0] = "first name";
+	field[1] = "last name";
+	field[2] = "nickname";
+	field[3] = "phone number";
+	field[4] = "darkest secret";
 }
