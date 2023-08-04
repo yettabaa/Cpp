@@ -1,6 +1,6 @@
 CC = c++
 
-CFLAG = -Wall -Wextra -Werror -std=c++98
+FLAGS = -Wall -Wextra -Werror -std=c++98
 
 FILES = main.cpp Harl.cpp
 
@@ -11,10 +11,10 @@ NAME = harlFilter
 all:	$(NAME)
 
 $(NAME):	$(OFILES)
-		$(CC) $(CFLAG) $(OFILES) -o $(NAME)
+		$(CC) $(FLAGS) $(OFILES) -o $(NAME)
 		 
 %.o: %.cpp Harl.hpp
-	$(CC) $(CFLAG) $(CFLAGS) -c $< -o $@
+	$(CC) $(FLAGS) -c $< -o $@
 
 clean:
 	rm -f $(OFILES)

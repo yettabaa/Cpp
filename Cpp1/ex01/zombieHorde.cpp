@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 02:35:10 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/01 04:49:28 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/08/04 02:16:47 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,12 @@
 
 Zombie*    zombieHorde( int N, std::string name )
 {
-    Zombie *objs = new Zombie[N];
-
+    Zombie *objs;
+    
+    objs = new Zombie[N];
+    if (!objs)
+        exit(1);
     for(int i = 0; i < N; i++)
-        objs[i] = name;
+        objs[i].set(name);
     return(objs);
 }

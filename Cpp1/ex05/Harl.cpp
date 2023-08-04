@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 07:44:02 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/03 04:54:03 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/08/04 07:26:33 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ void    Harl::complain( std::string level )
 {
     int i = 0;
     std::string str[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+    // Harl test; // remove it
     void (Harl::*ptr[4])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
 
     while (!str[i].empty() && str[i] != level)
@@ -55,4 +56,5 @@ void    Harl::complain( std::string level )
         return ;
     }
     (this->*ptr[i])();
+    // (test.*ptr[i])(); // need declare the object of the member function 
 }

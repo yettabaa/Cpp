@@ -1,6 +1,6 @@
 CC = c++
 
-CFLAG = -Wall -Wextra -Werror -std=c++98
+FLAGS = -Wall -Wextra -Werror -std=c++98
 
 FILES = main.cpp
 
@@ -11,7 +11,7 @@ NAME = ex02
 all:	$(NAME)
 
 $(NAME):	$(OFILES)
-		$(CC) $(CFLAG) $(OFILES) -o $(NAME)
+		$(CC) $(FLAGS) $(OFILES) -o $(NAME)
 clean:
 	rm -f $(OFILES)
 

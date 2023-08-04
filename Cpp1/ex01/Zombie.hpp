@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 02:35:06 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/01 04:57:56 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/08/04 02:05:00 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,10 @@ class Zombie
 private:
     std::string name;
 public:
-    Zombie(const std::string name);
     Zombie(void){} //defaulte constructor
+    ~Zombie();
     void announce( void );
+    void set( std::string new_name );
 };
 Zombie*    zombieHorde( int N, std::string name );
 
