@@ -6,11 +6,13 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 23:17:10 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/04 09:28:41 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/08/06 18:14:19 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+
+int const Fixed::fract = 8;
 
 Fixed::Fixed() : fixed_point(0)
 {
@@ -25,12 +27,14 @@ Fixed::~Fixed()
 Fixed::Fixed(const Fixed& copy)
 {
     std::cout << "Copy constructor called" << std::endl;
-    fixed_point = copy.getRawBits();
+    *this = copy;
+    // fixed_point = copy.getRawBits();
+    // this->operator=(copy);
 }
 
-Fixed& Fixed::operator=(Fixed &overl)
+Fixed& Fixed::operator=(const Fixed &overl)
 {
-    std::cout << "Copy assignment operator called" << std::endl;
+    std::cerr << "Copy assignment operator called" << std::endl;
     if (&overl != this)
         this->fixed_point = overl.getRawBits();
     return(* this);

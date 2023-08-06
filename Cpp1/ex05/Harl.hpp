@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 07:44:05 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/03 04:31:56 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/08/05 16:35:45 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ private:
     void info( void );
     void warning( void );
     void error( void );
+    void error_msg( void );
 public:
     void    complain( std::string level );    
 };

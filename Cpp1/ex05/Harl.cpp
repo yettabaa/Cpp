@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 07:44:02 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/04 07:26:33 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/08/05 21:17:47 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,24 +37,23 @@ void Harl::warning( void )
 
 void Harl::error( void )
 {
- 
    std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;
+}
+
+void Harl::error_msg( void )
+{
+   std::cout << "Harl don't understand what do you want !" << std::endl;
 }
 
 void    Harl::complain( std::string level )
 {
     int i = 0;
-    std::string str[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+    std::string str[] = {"DEBUG", "INFO", "WARNING", "ERROR", ""};
     // Harl test; // remove it
-    void (Harl::*ptr[4])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+    void (Harl::*ptr[])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error, &Harl::error_msg};
 
     while (!str[i].empty() && str[i] != level)
-        i++; 
-    if (i > 4)
-    {
-        std::cout << "Harl don't understand what do you want !" << std::endl;
-        return ;
-    }
+        i++;
     (this->*ptr[i])();
     // (test.*ptr[i])(); // need declare the object of the member function 
 }

@@ -13,7 +13,7 @@ all:	$(NAME)
 $(NAME):	$(OFILES)
 		$(CC) $(FLAGS) $(OFILES) -o $(NAME)
 		 
-%.o: %.cpp phonebook.hpp
+%.o: %.cpp PhoneBook.hpp Contact.hpp utils.hpp
 	$(CC) $(FLAGS) -c $< -o $@
 
 clean:

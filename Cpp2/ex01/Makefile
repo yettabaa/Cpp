@@ -13,7 +13,7 @@ all:	$(NAME)
 $(NAME):	$(OFILES)
 		$(CC) $(FLAGS) $(OFILES) -o $(NAME)
 
-%.o:%.cpp main.hpp
+%.o:%.cpp Fixed.hpp
 		$(CC) $(FLAGS) -c $< -o $@
 
 clean:

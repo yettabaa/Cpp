@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 23:16:58 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/04 09:41:16 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/08/05 21:30:52 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ int main( void )
 {
     Fixed a;
     Fixed const b( 10 ); 
-    Fixed const c( 42.42f ); 
+    Fixed const c( 42.42f );
     Fixed const d( b );
-    
+
     a = Fixed( 1234.4321f );
     
     std::cout << "a is " << a << std::endl;
