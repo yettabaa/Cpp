@@ -1,20 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   replace.h                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/02 06:49:30 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/02 06:51:01 by yettabaa         ###   ########.fr       */
+/*   Created: 2023/08/07 22:20:07 by yettabaa          #+#    #+#             */
+/*   Updated: 2023/08/09 22:57:04 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef REPLACE_H
-#define REPLACE_H
+#include "ClapTrap.hpp"
 
-#include <iostream>
-#include <fstream>
-#include <string>
-
-#endif
+int main()
+{
+    ClapTrap test("test");
+    ClapTrap def;
+    
+    test.attack(def._name());
+    def.takeDamage(test.set_attack(8));
+    def.beRepaired(6);
+    def.attack(test._name());
+    test.takeDamage(def.set_attack(8));
+    test.beRepaired(6);
+    test.attack(def._name());
+    def.takeDamage(test.set_attack(8));
+    return(0);   
+}

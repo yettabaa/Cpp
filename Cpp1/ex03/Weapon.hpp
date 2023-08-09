@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 05:31:57 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/02 01:47:46 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/08/09 12:53:52 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ private:
     std::string type;
 public:
     Weapon(std::string weptype);
-    void setType(std::string newType);
+    ~Weapon();
+    void setType(const std::string &newType);
     const std::string& getType();
 };
 

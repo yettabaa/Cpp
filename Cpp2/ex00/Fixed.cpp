@@ -40,7 +40,7 @@ Fixed& Fixed::operator=(const Fixed &overl)
     return(* this);
 }
 
-int Fixed::getRawBits( void ) const // const ??
+int Fixed::getRawBits( void ) const
 {
     std::cout << "getRawBits member function called" << std::endl;
     return(fixed_point);

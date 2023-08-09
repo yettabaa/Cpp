@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 23:17:10 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/06 18:14:30 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/08/09 19:44:16 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ Fixed& Fixed::operator=(const Fixed &overl)
     return(* this);
 }
 
-int Fixed::getRawBits( void ) const // const ??
+int Fixed::getRawBits( void ) const
 {
     std::cout << "getRawBits member function called" << std::endl;
     return(fixed_point);
@@ -69,7 +69,6 @@ float Fixed::toFloat( void ) const
 int Fixed::toInt( void ) const
 {
     return(fixed_point >> fract);
-    
 }
 
 std::ostream& operator<<(std::ostream& out, const Fixed& over)

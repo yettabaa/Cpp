@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 05:31:45 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/02 01:44:42 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/08/09 12:51:18 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ private:
     Weapon &weapon;
 public:
     HumanA( std::string hum_name,  Weapon &hum_weapon);
+    ~HumanA();
     void attack();
 };
 

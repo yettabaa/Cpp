@@ -1,2 +1,6 @@
 flouting point resource => https://towardsdatascience.com/binary-representation-of-the-floating-point-numbers-77d7364723f1
                         => https://www.tutorialspoint.com/fixed-point-and-floating-point-number-representations
+- debug 1.3 fixed_point
+-orthodox canoninal class // default constructor
+- this
+                        

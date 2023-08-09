@@ -10,8 +10,12 @@ NAME = ex02
 
 all:	$(NAME)
 
+%.o:%.cpp
+		$(CC) $(FLAGS) -c $< -o $@
+
 $(NAME):	$(OFILES)
 		$(CC) $(FLAGS) $(OFILES) -o $(NAME)
+		
 clean:
 	rm -f $(OFILES)
 

@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 23:17:05 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/06 21:38:22 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/08/09 21:56:00 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,29 +29,29 @@ public:
     int getRawBits( void ) const;
     void setRawBits( int const raw );
     float toFloat( void ) const;
-    Fixed& operator=(const Fixed &overl);
+    Fixed& operator=(const Fixed &overl); // !! need const ???
     int toInt( void ) const;
     // the left is * this and the right is obj
-    bool operator>(const Fixed& obj);
-    bool operator<(const Fixed& obj);
-    bool operator>=(const Fixed& obj);
-    bool operator<=(const Fixed& obj);
-    bool operator==(const Fixed& obj);
-    bool operator!=(const Fixed& obj);
+    bool operator>(const Fixed& obj) const; // when we use conts we dont need to cast this
+    bool operator<(const Fixed& obj) const;
+    bool operator>=(const Fixed& obj) const;
+    bool operator<=(const Fixed& obj) const;
+    bool operator==(const Fixed& obj) const;
+    bool operator!=(const Fixed& obj) const;
     
-    Fixed operator+(const Fixed& obj);
-    Fixed operator-(const Fixed& obj);
-    Fixed operator*(const Fixed& obj);
-    Fixed operator/(const Fixed& obj);
+    Fixed operator+(const Fixed& obj) const;
+    Fixed operator-(const Fixed& obj) const;
+    Fixed operator*(const Fixed& obj) const;
+    Fixed operator/(const Fixed& obj) const;
     
-    Fixed operator++();
-    Fixed operator--();
+    Fixed& operator++();// !! we need the const ??
+    Fixed& operator--();
     Fixed operator++(int);
     Fixed operator--(int);
 
-    static Fixed& min(const Fixed& a, const Fixed& b);
+    static const Fixed& min(const Fixed& a, const Fixed& b);
     static Fixed& min(Fixed& a, Fixed& b);
-    static Fixed& max(Fixed const &a, Fixed const &b);
+    static const Fixed& max(const Fixed &a, const Fixed &b);
     static Fixed& max(Fixed& a, Fixed& b);  
 };
 

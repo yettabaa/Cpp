@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 01:15:00 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/04 02:16:31 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/08/09 15:43:13 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ Zombie* newZombie( std::string name )
 {
     Zombie* obj;
     
-    obj = new Zombie(name);
+    obj = new(std::nothrow) Zombie(name);
     if (!obj)
         exit(1);
     return(obj);

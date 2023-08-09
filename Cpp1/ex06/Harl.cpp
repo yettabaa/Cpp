@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 04:36:55 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/03 05:05:25 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/08/09 12:55:40 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,19 +44,19 @@ void Harl::error( void )
                 << "This is unacceptable! I want to speak to the manager now.\n" << std::endl;
 }
 
+void Harl::error_msg( void )
+{
+   std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+}
+
 void    Harl::complain( std::string level )
 {
     int i = 0;
-    std::string str[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-    void (Harl::*ptr[4])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+    std::string str[] = {"DEBUG", "INFO", "WARNING", "ERROR", ""};
+    void (Harl::*ptr[])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error, &Harl::error_msg};
 
     while (!str[i].empty() && str[i] != level)
         i++;
-    if (i > 4)
-    {
-        std::cout << "Harl don't understand what do you want !" << std::endl;
-        return ;
-    }
     switch (i)
     {
         case 0:
@@ -67,5 +67,8 @@ void    Harl::complain( std::string level )
             (this->*ptr[2])();
         case 3:
             (this->*ptr[3])();
+            break;
+        default:
+            (this->*ptr[4])();
     }
 }
