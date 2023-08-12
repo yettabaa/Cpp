@@ -1,19 +1,19 @@
 CC = c++
 
-FLAGS = -Wall -Wextra -Werror -Wshadow -std=c++98
+FLAGS = -Wall -Wextra -Werror -std=c++98 -Wshadow
 
-FILES = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
+FILES = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
 
 OFILES = $(FILES:.cpp=.o)
 
-NAME = ex03
+NAME = ex02
 
 all:	$(NAME)
 
 $(NAME):	$(OFILES)
 		$(CC) $(FLAGS) $(OFILES) -o $(NAME)
 		 
-%.o: %.cpp ClapTrap.hpp ScavTrap.hpp FragTrap.hpp DiamondTrap.hpp
+%.o: %.cpp ClapTrap.hpp ScavTrap.hpp FragTrap.hpp
 	$(CC) $(FLAGS) -c $< -o $@
 
 clean:

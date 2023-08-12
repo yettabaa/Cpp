@@ -5,29 +5,28 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/03 23:16:58 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/10 17:54:01 by yettabaa         ###   ########.fr       */
+/*   Created: 2023/08/07 22:20:07 by yettabaa          #+#    #+#             */
+/*   Updated: 2023/08/11 17:45:47 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#include "FragTrap.hpp"
 
-int main( void ) 
-{ 
-    Fixed a;
-    Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
-    Fixed const c( Fixed( 5.05f ) / Fixed( 0 ) );
+int main()
+{
+    FragTrap enemie("enemie");
+    FragTrap _default;
     
-    std::cout << c << std::endl;
-    std::cout << a << std::endl;
-    std::cout << ++a << std::endl;
-    std::cout << a << std::endl;
-    std::cout << a++ << std::endl;
-    std::cout << a << std::endl;
-    
-    std::cout << b << std::endl;
-    
-    std::cout << Fixed::max( a, b ) << std::endl;
-    
-    return 0;
+    enemie.highFivesGuys();
+    _default.highFivesGuys();
+    enemie.attack(_default._name());
+    _default.takeDamage(enemie._damage());
+    enemie.attack(_default._name());
+    _default.takeDamage(enemie._damage());
+    _default.beRepaired(40);
+    _default.attack(enemie._name());
+    enemie.takeDamage(_default._damage());
+    _default.attack(enemie._name());
+    enemie.takeDamage(_default._damage());
+    return(0);
 }

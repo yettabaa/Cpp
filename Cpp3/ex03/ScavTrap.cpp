@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 21:25:03 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/11 19:02:01 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/08/12 18:26:30 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,12 +45,12 @@ ScavTrap& ScavTrap::operator=(const ScavTrap &overl)
     std::cout << "ScavTrap Copy assignment operator called" << std::endl;
     if (this != &overl)
     {
-        this->name = overl.name;
-        this->initial_health = overl.initial_health;
-        this->initial_energy = overl.initial_energy;
-        this->attack_damage = overl.attack_damage;
-        this->health = overl.health;
-        this->energy = overl.energy;
+        name = overl.name;
+        initial_health = overl.initial_health;
+        initial_energy = overl.initial_energy;
+        attack_damage = overl.attack_damage;
+        health = overl.health;
+        energy = overl.energy;
     }
     return(*this);
 }

@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 22:20:03 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/09 23:23:08 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/08/12 18:19:29 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ ClapTrap::ClapTrap() : name("default") ,initial_health(10), initial_energy(10), 
     energy = initial_energy;
 }
 
-ClapTrap::ClapTrap(std::string name) : name(name) ,initial_health(10), initial_energy(10), attack_damage(0) 
+ClapTrap::ClapTrap(const std::string &name) : name(name) ,initial_health(10), initial_energy(10), attack_damage(0) 
 {
-        std::cout << "ClapTrap Parameterized constructor called" << std::endl;
+    std::cout << "ClapTrap Parameterized constructor called" << std::endl;
     health = initial_health;
     energy = initial_energy;
 }
@@ -36,10 +36,12 @@ ClapTrap& ClapTrap::operator=(const ClapTrap &overl)
     std::cout << "ClapTrap Copy assignment operator called" << std::endl;
     if (&overl != this)
     {
-        this->name = overl.name;
-        this->initial_health = overl.initial_health;
-        this->initial_energy = overl.initial_energy;
-        this->attack_damage = overl.attack_damage;
+        name = overl.name;
+        initial_health = overl.initial_health;
+        initial_energy = overl.initial_energy;
+        attack_damage = overl.attack_damage;
+        health = overl.health;
+        energy = overl.energy;
     }
     return(* this);
 }
@@ -52,7 +54,7 @@ ClapTrap::ClapTrap (const ClapTrap &copy)
 
 void ClapTrap::attack(const std::string& target)
 {
-    if(!health)// negative
+    if(!health)
     {
         std::cout << "ClapTrap " << name << " he can't attak, he's dead!" << std::endl;
         return;
@@ -62,7 +64,7 @@ void ClapTrap::attack(const std::string& target)
         std::cout << "ClapTrap " << name << " has no energy, he can't attak!" << std::endl;
         return;
     }
-    energy--;      
+    energy--;           
     std::cout   << "ClapTrap " << name << " attacks "<< target 
                 <<", causing " << attack_damage <<" points of damage!" 
                 <<", health "<< health <<"/" << initial_health
@@ -72,9 +74,9 @@ void ClapTrap::attack(const std::string& target)
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
-    if(!health)// negative
+    if(!health)
     {
-        std::cout << "ClapTrap " << name << " he's already dead, he can't take damage!" << std::endl;
+        std::cout << name << " he's already dead, he can't take damage!" << std::endl;
         return;
     }
     //gad msg
@@ -82,9 +84,9 @@ void ClapTrap::takeDamage(unsigned int amount)
     if (health <= 0)
     {
         health = 0;
-        std::cout << "ClapTrap " << name << " DEAD!" << std::endl;
+        std::cout << name << " DEAD!" << std::endl;
     }
-    std::cout   << "ClapTrap "<< name << " takeDomage "<< amount 
+    std::cout   << name << " takeDomage "<< amount 
                 <<", health "<< health <<"/" << initial_health
                 <<", Energy "<< energy <<"/" << initial_energy
                 << std::endl;
@@ -94,31 +96,22 @@ void ClapTrap::beRepaired(unsigned int amount)
 {
     if(!health)// negative
     {
-        std::cout << "ClapTrap " << name << " he's already dead, he can't beRepaired!" << std::endl;
+       std::cout << name << " he's already dead, he can't beRepaired!" << std::endl;
         return;
     }
     if(!energy)
     {
-        std::cout << "ClapTrap " << name << " has no energy, he can't beRepaired" << std::endl;
+        std::cout << name << " has no energy, he can't beRepaired" << std::endl;
         return;
     }
     //gad msg
     health += amount;
     energy--;
     (health > initial_health) && (health = initial_health);
-    std::cout   << "ClapTrap "<< name << " beRepaired "<< amount 
+    std::cout  << name << " beRepaired "<< amount 
                 <<", health "<< health <<"/" << initial_health
                 <<", Energy "<< energy <<"/" << initial_energy
                 << std::endl;
-}
-
-void ClapTrap::_status()
-{
-    if (!health)
-        std::cout << "\n" << "ClapTrap " << name << " DEAD !" << std::endl;
-    std::cout   << "\n"<< "ClapTrap " <<name << " status:\nHealt: " << health 
-                << " / Energy: " << energy << " / Attack_damage: " << attack_damage 
-                << "\n" <<std::endl;
 }
 
 std::string ClapTrap::_name()
@@ -126,10 +119,14 @@ std::string ClapTrap::_name()
     return (name);
 }
 
-unsigned int ClapTrap::set_attack(long attack)
+void ClapTrap::set_attack(long attack)
 {
     attack_damage = attack;
     (attack_damage < 0) && (attack = 0);
     (attack_damage < initial_health) && (attack = initial_health);
+}
+
+long ClapTrap::_damage()
+{
     return(attack_damage);
 }

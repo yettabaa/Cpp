@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 22:20:09 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/12 18:04:34 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/08/12 18:09:09 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 class ClapTrap
 {
-private:
+protected:
     std::string name;
     long initial_health;
     long initial_energy; 

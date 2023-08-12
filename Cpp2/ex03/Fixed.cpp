@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 23:17:10 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/09 20:24:17 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/08/10 17:13:53 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,35 @@
 
 int const Fixed::fract = 8;
 
-Fixed::Fixed() : fixed_point(0) {}
+Fixed::Fixed() : fixed_point(0) 
+{
+    std::cout << "Default constructor called" << std::endl;
+}
 
-Fixed::~Fixed() {}
+Fixed::~Fixed() 
+{
+    std::cout << "Destructor called" << std::endl;
+}
 
 Fixed::Fixed(const Fixed& copy)
 {
+    std::cout << "Copy constructor called" << std::endl;
     *this = copy;
-    // operator=(copy);
-    // fixed_point = copy.getRawBits();
 }
 
-Fixed::Fixed(const int fixed_point) : fixed_point(fixed_point << fract) {}
+Fixed::Fixed(const int fixed_point) : fixed_point(fixed_point << fract) 
+{
+     std::cout << "Int constructor called" << std::endl;
+}
 
-Fixed::Fixed(const float floating_point) : fixed_point(roundf(floating_point * (1 << fract))) {}
+Fixed::Fixed(const float floating_point) : fixed_point(roundf(floating_point * (1 << fract))) 
+{
+    std::cout << "Float constructor called" << std::endl;
+}
 
 Fixed& Fixed::operator=(const Fixed &overl)
 {
+    std::cout << "Copy assignment operator called" << std::endl;
     if (&overl != this)
         setRawBits(overl.fixed_point);
     return(* this);
@@ -113,13 +125,13 @@ Fixed Fixed::operator/(const Fixed& obj) const
     return(Fixed((this->fixed_point / (float)(1 << fract)) / (obj.fixed_point / (float)(1 << fract))));
 }
 
-Fixed Fixed::operator++()
+Fixed& Fixed::operator++()
 {
     this->fixed_point++; 
     return(*this);
 }
 
-Fixed Fixed::operator--()
+Fixed& Fixed::operator--()
 {
     this->fixed_point--; 
     return(*this);
@@ -128,14 +140,14 @@ Fixed Fixed::operator--()
 Fixed Fixed::operator++(int)
 {
     Fixed tmp(*this);
-    this->fixed_point++; // the object a is increment here but we return the copy of a befor increment
+    this->fixed_point++;
     return(tmp);
 }
 
 Fixed Fixed::operator--(int)
 {
     Fixed tmp(*this);
-    this->fixed_point--; // same think here
+    this->fixed_point--;
     return(tmp);
 }
 
@@ -143,7 +155,7 @@ const Fixed& Fixed::min(const Fixed &a, const Fixed &b)
 {
     if (a > b)
         return(a);
-    return((Fixed&)b);
+    return(b);
 }
 
 Fixed& Fixed::min(Fixed& a, Fixed& b)

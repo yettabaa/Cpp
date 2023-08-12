@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/11 17:52:11 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/11 23:24:36 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/08/12 18:25:43 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,24 @@
 DiamondTrap::DiamondTrap()
 {
     std::cout << "DiamondTrap Default constructor called" << std::endl;
-    initial_health = FragTrap::initial_health;
-    initial_energy = ScavTrap::initial_energy;
-    attack_damage = FragTrap::attack_damage;
+    initial_health = 100;
+    initial_energy = 50;
+    attack_damage = 30;
     health = initial_health;
     energy = initial_energy;
-    name = "default";
+    ClapTrap::name = "default_clap_name";
+    this->name = "default";
 }
 
-DiamondTrap::DiamondTrap(const std::string &name) : ClapTrap(name +  "_clap_name")
+DiamondTrap::DiamondTrap(const std::string &name)
 {
     std::cout << "DiamondTrap Parameterized constructor called" << std::endl;
-    // std::cout << FragTrap::attack_damage << std::endl;
-    initial_health = FragTrap::initial_health;
-    initial_energy = ScavTrap::initial_energy;
-    attack_damage = FragTrap::attack_damage;
+    initial_health = 100;
+    initial_energy = 50;
+    attack_damage = 30;
     health = initial_health;
     energy = initial_energy;
+    ClapTrap::name = name + "_clap_name";
     this->name = name;
 }
 
@@ -40,12 +41,12 @@ DiamondTrap& DiamondTrap::operator=(const DiamondTrap &overl)
     std::cout << "DiamondTrap Copy assignment operator called" << std::endl;
     if (this != &overl)
     {
-        this->name = overl.name;
-        this->initial_health = overl.initial_health;
-        this->initial_energy = overl.initial_energy;
-        this->attack_damage = overl.attack_damage;
-        this->health = overl.health;
-        this->energy = overl.energy;
+        name = overl.name;
+        initial_health = overl.initial_health;
+        initial_energy = overl.initial_energy;
+        attack_damage = overl.attack_damage;
+        health = overl.health;
+        energy = overl.energy;
     }
     return(* this);
 }
@@ -68,6 +69,15 @@ void DiamondTrap::attack(const std::string& target)
 
 void DiamondTrap::whoAmI()
 {
-    // std::cout << FragTrap::attack_damage << std::endl;
+    if(!health)
+    {
+       std::cout << name << " " << ClapTrap::_name() << " he's already dead." << std::endl;
+        return;
+    }
+    if(!energy)
+    {
+        std::cout << name << " " << ClapTrap::_name() << " has no energy." << std::endl;
+        return;
+    }
     std::cout << "I am " << name << " " << ClapTrap::_name() << std::endl;
 }

@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/08 21:25:08 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/10 21:41:53 by yettabaa         ###   ########.fr       */
+/*   Created: 2023/08/10 15:17:54 by yettabaa          #+#    #+#             */
+/*   Updated: 2023/08/11 17:45:32 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-#define SCAVTRAP_HPP
-//only non-inherited variables can be initialized in the member initializer list
+#ifndef FRAGTRAP_HPP
+#define FRAGTRAP_HPP
+
 #include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap
+class FragTrap : public ClapTrap
 {
 public:
-    ScavTrap();
-    ScavTrap (const std::string &name);
-    ScavTrap &operator=(const ScavTrap &overl);
-    ScavTrap (const ScavTrap &copy);
-    ~ScavTrap();
+    FragTrap();
+    FragTrap(const std::string &name);
+    FragTrap(const FragTrap &copy);
+    FragTrap &operator=(const FragTrap &overl);
+    ~FragTrap();
+    void highFivesGuys(void);
     void attack(const std::string& target);
-    void guardGate();
 };
+
+
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 23:17:05 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/07 15:50:34 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/08/10 17:14:07 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ public:
     Fixed& operator=(const Fixed &overl);
     int toInt( void ) const;
     // the left is * this and the right is obj
-    bool operator>(const Fixed& obj) const; // when we use conts we dont need to cast this
+    bool operator>(const Fixed& obj) const;
     bool operator<(const Fixed& obj) const;
     bool operator>=(const Fixed& obj) const;
     bool operator<=(const Fixed& obj) const;
@@ -44,11 +44,11 @@ public:
     Fixed operator*(const Fixed& obj) const;
     Fixed operator/(const Fixed& obj) const;
     
-    Fixed operator++();
-    Fixed operator--();
+    Fixed& operator++();
+    Fixed& operator--();
     Fixed operator++(int);
     Fixed operator--(int);
-
+    std::ostream& operator<<(std::ostream& out);
     static const Fixed& min(const Fixed& a, const Fixed& b);
     static Fixed& min(Fixed& a, Fixed& b);
     static const Fixed& max(const Fixed &a, const Fixed &b);

@@ -21,6 +21,8 @@ inline int double_to_fixed(double input)
 
 int main()
 {
+    int x = 10;
+ int  &y = 20;
     // float a= 5.3;
     // float b= 0.0;
     // printf("%f\n", a/b);

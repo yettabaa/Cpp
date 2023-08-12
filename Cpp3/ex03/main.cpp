@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 22:20:07 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/11 19:37:34 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/08/12 18:40:22 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,10 @@ int main()
     
     enemie.whoAmI();
     _default.whoAmI();
+    enemie.guardGate();
+    _default.guardGate();
+    enemie.highFivesGuys();
+    _default.highFivesGuys();
     enemie.attack(_default._name());
     _default.takeDamage(enemie._damage());
     enemie.attack(_default._name());
@@ -28,5 +32,8 @@ int main()
     enemie.takeDamage(_default._damage());
     _default.attack(enemie._name());
     enemie.takeDamage(_default._damage());
+    enemie.takeDamage(_default._damage());
+    enemie.takeDamage(_default._damage());
+    enemie.whoAmI();
     return(0);
 }

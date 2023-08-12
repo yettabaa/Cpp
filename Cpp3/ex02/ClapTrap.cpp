@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 22:20:03 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/12 18:24:50 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/08/12 18:24:43 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ ClapTrap::ClapTrap() : name("default") ,initial_health(10), initial_energy(10), 
     energy = initial_energy;
 }
 
-ClapTrap::ClapTrap(const std::string &name) : name(name ) ,initial_health(10), initial_energy(10), attack_damage(0) 
+ClapTrap::ClapTrap(const std::string &name) : name(name) ,initial_health(10), initial_energy(10), attack_damage(0) 
 {
     std::cout << "ClapTrap Parameterized constructor called" << std::endl;
     health = initial_health;

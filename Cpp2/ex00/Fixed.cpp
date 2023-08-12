@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 23:17:10 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/06 18:14:19 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/08/10 16:22:12 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 int const Fixed::fract = 8;
 
-Fixed::Fixed() : fixed_point(0)
+Fixed::Fixed()
 {
+    setRawBits(0);
     std::cout << "Default constructor called" << std::endl;
 }
 
