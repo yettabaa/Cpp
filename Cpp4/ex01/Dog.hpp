@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 16:15:23 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/13 23:51:26 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/08/14 17:57:22 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ public:
     Dog(const Dog &copy);
     virtual ~Dog();
     virtual void makeSound(void) const;
-    void make_brain();
+    virtual void makeBrain(void) const;
 };
 
 #endif

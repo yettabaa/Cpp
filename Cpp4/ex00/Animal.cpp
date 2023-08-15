@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/12 20:07:46 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/14 18:49:19 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/08/14 17:17:40 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,6 @@ Animal::~Animal()
 void Animal::makeSound(void) const
 {
     std::cout << std::endl;
-}
-
-void Animal::makeBrain(void) const
-{
-    
 }
 
 const std::string& Animal::getType(void) const

@@ -64,7 +64,8 @@
         "strstream": "cpp",
         "fstream": "cpp",
         "deque": "cpp",
-        "stack": "cpp"
+        "stack": "cpp",
+        "any": "cpp"
     },
     "files.autoSave": "afterDelay"
 }

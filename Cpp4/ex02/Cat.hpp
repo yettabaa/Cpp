@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/24 05:22:28 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/14 23:46:18 by yettabaa         ###   ########.fr       */
+/*   Created: 2023/08/13 13:59:56 by yettabaa          #+#    #+#             */
+/*   Updated: 2023/08/14 18:52:03 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#ifndef CAT_HPP
+#define CAT_HPP
 
-int main(int ac, char **av)
+#include "AAnimal.hpp"
+#include "Brain.hpp"
+
+class Cat : public AAnimal
 {
-    int i, j = 0;
-    std::string str;
+private:
+    Brain* brain;
+public:
+    Cat();
+    Cat& operator=(const Cat &overl);
+    Cat(const Cat &copy);
+    virtual ~Cat();
+    virtual void makeSound(void) const;
+    virtual void makeBrain(void) const;
+};
 
-    if (ac == 1)
-        return (std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *\n", 0);
-    while (av[++j])
-    {
-        i = -1;
-        while (av[j][++i])
-            str += std::toupper(av[j][i]);
-    }
-    std::cout << str << std::endl;
-}
-
+#endif

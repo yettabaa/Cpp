@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/24 05:22:28 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/14 23:46:18 by yettabaa         ###   ########.fr       */
+/*   Created: 2023/08/12 20:07:49 by yettabaa          #+#    #+#             */
+/*   Updated: 2023/08/14 17:17:29 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef ANIMAL_HPP
+#define ANIMAL_HPP
+
+#include <iomanip>
 #include <iostream>
 
-int main(int ac, char **av)
+class Animal
 {
-    int i, j = 0;
-    std::string str;
+protected:
+    std::string type;
+public:
+    Animal();
+    Animal& operator=(const Animal &overl);
+    Animal(const Animal &copy);
+    virtual~Animal();
+    virtual void makeSound(void) const;
+    const std::string& getType(void) const;
+};
 
-    if (ac == 1)
-        return (std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *\n", 0);
-    while (av[++j])
-    {
-        i = -1;
-        while (av[j][++i])
-            str += std::toupper(av[j][i]);
-    }
-    std::cout << str << std::endl;
-}
+#include "Cat.hpp"
+#include "Dog.hpp"
 
+#endif

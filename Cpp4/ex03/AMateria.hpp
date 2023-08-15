@@ -1,36 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   AMateria.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/12 20:07:49 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/14 18:49:22 by yettabaa         ###   ########.fr       */
+/*   Created: 2023/08/14 21:32:45 by yettabaa          #+#    #+#             */
+/*   Updated: 2023/08/14 23:41:53 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP
+#ifndef AMATERIA_HPP
+#define AMATERIA_HPP
 
 #include <iomanip>
 #include <iostream>
 
-class Animal
+#include "ICharacter.hpp"
+
+class AMateria : public ICharacter
 {
 protected:
     std::string type;
+    // [...]
 public:
-    Animal();
-    Animal& operator=(const Animal &overl);
-    Animal(const Animal &copy);
-    virtual~Animal();
-    virtual void makeSound(void) const;
-    virtual void makeBrain(void) const;
-    const std::string& getType(void) const;
+    AMateria();
+    AMateria& operator=(const AMateria &overl);
+    AMateria(const AMateria &copy);
+    ~AMateria();
+    AMateria(std::string const & type); 
+    // [...]
+    std::string const & getType() const; //Returns the materia type
+    virtual AMateria* clone() const = 0;
+    virtual void use(ICharacter& target);
 };
 
-#include "Cat.hpp"
-#include "Dog.hpp"
+
+
 
 #endif

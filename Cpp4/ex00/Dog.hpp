@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/24 05:22:28 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/14 23:46:18 by yettabaa         ###   ########.fr       */
+/*   Created: 2023/08/13 16:15:23 by yettabaa          #+#    #+#             */
+/*   Updated: 2023/08/13 17:04:44 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#ifndef DOG_HPP
+#define DOG_HPP
 
-int main(int ac, char **av)
+#include "Animal.hpp"
+
+class Dog : public Animal
 {
-    int i, j = 0;
-    std::string str;
+public:
+    Dog();
+    Dog& operator=(const Dog &overl);
+    Dog(const Dog &copy);
+    virtual ~Dog();
+    virtual void makeSound(void) const;
+};
 
-    if (ac == 1)
-        return (std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *\n", 0);
-    while (av[++j])
-    {
-        i = -1;
-        while (av[j][++i])
-            str += std::toupper(av[j][i]);
-    }
-    std::cout << str << std::endl;
-}
-
+#endif

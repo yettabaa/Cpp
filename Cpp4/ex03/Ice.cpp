@@ -1,30 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/24 05:22:28 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/14 23:46:18 by yettabaa         ###   ########.fr       */
+/*   Created: 2023/08/14 21:55:07 by yettabaa          #+#    #+#             */
+/*   Updated: 2023/08/14 22:14:53 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "Ice.hpp"
 
-int main(int ac, char **av)
+Ice::Ice()
 {
-    int i, j = 0;
-    std::string str;
-
-    if (ac == 1)
-        return (std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *\n", 0);
-    while (av[++j])
-    {
-        i = -1;
-        while (av[j][++i])
-            str += std::toupper(av[j][i]);
-    }
-    std::cout << str << std::endl;
+    type = "ice";
 }
 
+Ice& Ice::operator=(const Ice &overl)
+{
+    if (this != &overl)
+        type = overl.type;
+    return(*this);
+}
+
+Ice::Ice(const Ice &copy)
+{
+    *this = copy;
+}
+
+Ice::~Ice() {}
+
+AMateria* AMateria::clone() const
+{
+    return (new Ice);
+}

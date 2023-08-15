@@ -1,52 +1,52 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   AAnimal.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/12 20:07:46 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/14 18:49:19 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/08/14 18:58:41 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 
-Animal::Animal() : type("Animal")
+AAnimal::AAnimal() : type("AAnimal")
 {
-    std::cout << "Animal Default constructor called" << std::endl;
+    std::cout << "AAnimal Default constructor called" << std::endl;
 }
 
-Animal& Animal::operator=(const Animal &overl)
+AAnimal& AAnimal::operator=(const AAnimal &overl)
 {
-    std::cout << "Animal Copy assignment operator called" << std::endl;
+    std::cout << "AAnimal Copy assignment operator called" << std::endl;
     if (this != &overl)
         type = overl.type;
     return(*this);    
 }
 
-Animal::Animal(const Animal &copy)
+AAnimal::AAnimal(const AAnimal &copy)
 {
-    std::cout << "Animal Copy constructor called" << std::endl;
+    std::cout << "AAnimal Copy constructor called" << std::endl;
     *this = copy;
 }
 
-Animal::~Animal()
+AAnimal::~AAnimal()
 {
-    std::cout << "Animal Destructor called" << std::endl;
+    std::cout << "AAnimal Destructor called" << std::endl;
 }
 
-void Animal::makeSound(void) const
-{
-    std::cout << std::endl;
-}
+// void AAnimal::makeSound(void) const
+// {
+//     std::cout << std::endl;
+// }
 
-void Animal::makeBrain(void) const
-{
+// void AAnimal::makeBrain(void) const
+// {
     
-}
+// }
 
-const std::string& Animal::getType(void) const
+const std::string& AAnimal::getType(void) const
 {
     return(type);
 }
