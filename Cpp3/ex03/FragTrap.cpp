@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 15:17:52 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/12 18:26:21 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/08/15 23:29:31 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ FragTrap::FragTrap(const std::string &name)
     health = initial_health;
     energy = initial_energy;
     this->name = name;
+    std::cout <<"FragTrap ==>  " << &name << std::endl; //
 }
 
 FragTrap::FragTrap(const FragTrap &copy)

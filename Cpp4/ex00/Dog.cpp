@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 16:17:01 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/13 16:17:37 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/08/15 23:25:54 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 Dog::Dog()
 {
+    // std::cout << this << std::endl;
     std::cout << "Dog Default constructor called" << std::endl;
     type = "Dog";
 }

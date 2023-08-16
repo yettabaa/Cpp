@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 14:01:09 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/13 16:13:56 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/08/15 22:08:59 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 Cat::Cat()
 {
     std::cout << "Cat Default constructor called" << std::endl;
+    // std::cout << &type <<std::endl;
     type = "Cat";
 }
 

@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 22:20:03 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/12 18:24:50 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/08/15 23:28:30 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ ClapTrap::ClapTrap() : name("default") ,initial_health(10), initial_energy(10), 
     std::cout << "ClapTrap Default constructor called" << std::endl;
     health = initial_health;
     energy = initial_energy;
+    std::cout <<"ClapTrap ==>  " << &name << std::endl; //
 }
 
 ClapTrap::ClapTrap(const std::string &name) : name(name ) ,initial_health(10), initial_energy(10), attack_damage(0) 

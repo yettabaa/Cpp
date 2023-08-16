@@ -1,17 +1,21 @@
 #include <iomanip>
 #include <iostream>
 
-void f()
+class A
 {
-    system("leaks a.out");
-}
+    int i;
+    int j;
+    void f()
+    {
+        int i;
+        std::cout << "djg" << std::endl;
+    }
+};
 
 int main(int argc, char const *argv[])
 {
     // int *i = new int[4];
-    int *i = nullptr;
-    delete[] i;
-        atexit (f);
+    printf("%lu\n", sizeof(A));
 
     
 }

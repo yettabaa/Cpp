@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 16:39:44 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/14 17:40:05 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/08/16 04:05:14 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Brain::Brain()
 
 Brain::Brain(const std::string &name)
 {
-    std::cout << "Brain Default constructor called" << std::endl;
+    std::cout << "Brain Parameterized constructor called" << std::endl;
     for(int i = 0; i < 100; i++)
             ideas[i] = name ;
     // for(int i = 0; i < 100; i++)

@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/11 17:52:11 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/12 18:25:43 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/08/15 23:34:00 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ DiamondTrap::DiamondTrap(const std::string &name)
     energy = initial_energy;
     ClapTrap::name = name + "_clap_name";
     this->name = name;
+    // std::cout << &name << std::endl;
 }
 
 DiamondTrap& DiamondTrap::operator=(const DiamondTrap &overl)

@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 16:17:01 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/14 18:29:58 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/08/16 04:13:13 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ Dog& Dog::operator=(const Dog &overl)
     if (this != &overl)
     {
         delete brain;
+        brain = nullptr;
         type = overl.type;
         brain = new Brain;
         *brain = *overl.brain;
