@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/12 20:07:46 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/15 22:08:55 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/08/16 19:26:08 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 Animal::Animal() : type("Animal")
 {
-    // std::cout << &type <<std::endl;
     std::cout << "Animal Default constructor called" << std::endl;
 }
 
@@ -39,7 +38,7 @@ Animal::~Animal()
 
 void Animal::makeSound(void) const
 {
-    std::cout << std::endl;
+    std::cout << "~ ~" << std::endl;
 }
 
 const std::string& Animal::getType(void) const

@@ -1,36 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/12 20:07:49 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/16 21:41:09 by yettabaa         ###   ########.fr       */
+/*   Created: 2023/08/16 19:15:56 by yettabaa          #+#    #+#             */
+/*   Updated: 2023/08/16 19:33:05 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP
+#ifndef WRONGCAT_HPP
+#define WRONGCAT_HPP
 
-#include <iomanip>
-#include <iostream>
+#include "WrongAnimal.hpp"
 
-class Animal
+class WrongCat : public WrongAnimal
 {
-protected:
-    std::string type;
 public:
-    Animal();
-    Animal& operator=(const Animal &overl);
-    Animal(const Animal &copy);
-    virtual~Animal();
-    virtual void makeSound(void) const;
-    virtual void makeBrain(void) const;
-    const std::string& getType(void) const;
+    WrongCat();
+    WrongCat& operator=(const WrongCat &overl);
+    WrongCat(const WrongCat &copy);
+    ~WrongCat();
+    void makeSound(void) const;
 };
-
-#include "Cat.hpp"
-#include "Dog.hpp"
 
 #endif

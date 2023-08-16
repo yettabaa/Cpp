@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/12 20:30:36 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/14 18:59:41 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/08/16 22:10:44 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,9 @@ void f()
 
 int main() 
 {
+
+    // AAnimal aanimal;
+
     const AAnimal* j = new Dog(); 
     const AAnimal* i = new Cat();
     delete j;//should not create a leak 

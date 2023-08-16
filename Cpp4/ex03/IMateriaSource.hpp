@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 23:45:40 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/16 04:33:02 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/08/16 15:17:35 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <iomanip>
 #include <iostream>
 
-class AMateria;
+#include "AMateria.hpp"
 
 class IMateriaSource
 {

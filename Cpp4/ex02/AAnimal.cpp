@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/12 20:07:46 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/14 18:58:41 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/08/16 22:08:47 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,16 +35,6 @@ AAnimal::~AAnimal()
 {
     std::cout << "AAnimal Destructor called" << std::endl;
 }
-
-// void AAnimal::makeSound(void) const
-// {
-//     std::cout << std::endl;
-// }
-
-// void AAnimal::makeBrain(void) const
-// {
-    
-// }
 
 const std::string& AAnimal::getType(void) const
 {

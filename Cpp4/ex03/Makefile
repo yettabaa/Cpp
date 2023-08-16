@@ -1,8 +1,8 @@
 CC = c++
 
-FLAGS = -Wall -Wextra -Werror -std=c++98
+FLAGS = -Wall -Wextra -Werror -std=c++98 -g #-fsanitize=address
 
-FILES = main.cpp AMateria.cpp Cure.cpp Ice.cpp Character.cpp #MateriaSource.cpp
+FILES = main.cpp AMateria.cpp Cure.cpp Ice.cpp Character.cpp MateriaSource.cpp
 
 OFILES = $(FILES:.cpp=.o)
 

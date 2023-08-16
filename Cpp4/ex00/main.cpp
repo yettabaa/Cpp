@@ -6,11 +6,12 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/12 20:30:36 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/15 23:25:56 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/08/16 19:38:01 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
+#include "WrongAnimal.hpp"
 
 void f()
 {
@@ -19,26 +20,38 @@ void f()
 
 int main() 
 {
+    {
+        const Animal *meta = new Animal();
+        const Animal* j = new Dog();
+        const Animal* i = new Cat();
+        
+        std::cout << "getType of Animal =>: " << meta->getType() << " " << std::endl;
+        std::cout << "getType of Dog =>: " << j->getType() << " " << std::endl;
+        std::cout << "getType of Cat =>: " << i->getType() << " " << std::endl;
+        std::cout << "Sound of Animal =>: ";
+        meta->makeSound();
+        std::cout << "Sound of Dog =>: ";
+        j->makeSound();
+        std::cout << "Sound of Cat =>: ";
+        i->makeSound();
+        delete i;
+        delete j;
+        delete meta;
+    }
+    std::cout << "\n* The Wrong Implementation ! *\n" << std::endl;
+    {
+        const WrongAnimal *meta = new WrongAnimal();
+        const WrongAnimal * i = new WrongCat();
+        
+        std::cout << "getType of WrongAnimal =>: " << meta->getType() << " " << std::endl;
+        std::cout << "getType of WrongCat =>: " << i->getType() << " " << std::endl;
+        std::cout << "Sound of WrongAnimal =>: ";
+        meta->makeSound();
+        std::cout << "Sound of WrongCat =>: ";
+        i->makeSound();
+        delete i;
+        delete meta;
+    }
     // atexit (f);
-    // Dog a;
-
-    // std::cout << "main  " << &a << std::endl;
-    // const Animal *meta = &a;  // Subtype Polymorphism 
-    const Animal *meta = new Dog();  // Subtype Polymorphism 
-    //  std::cout << "main  " << meta <<std::endl;
-    const Animal* j = new Dog();
-    const Animal* i = new Cat(); // whay we marked a const function
-    
-    std::cout << j->getType() << " " << std::endl;
-    std::cout << "-"<< meta->getType() << " " << std::endl;
-    std::cout << i->getType() << " " << std::endl; 
-    i->makeSound(); //will output the cat sound!
-    j->makeSound();
-    // meta->makeSound();
-
-    delete i;
-    delete j;
-    // delete meta;
-    //  ...
     return 0; 
 }

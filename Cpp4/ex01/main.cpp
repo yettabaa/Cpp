@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/12 20:30:36 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/14 18:49:57 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/08/16 22:08:05 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,11 @@ int main()
         delete array_of_animal[i];
     delete[] array_of_animal;
     
+    // Animal m;
+    // {
+    //     Animal z =m;
+    //     m=z;
+    // }
     // atexit (f);
 
     //  ...

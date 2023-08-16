@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 14:01:09 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/16 04:12:43 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/08/16 21:45:00 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,9 @@ Cat& Cat::operator=(const Cat &overl)
     if (this != &overl)
     {
         delete brain;
-        brain = nullptr;
         type = overl.type;
         brain = new Brain;
-        *brain = *overl.brain;    
+        *brain = *overl.brain;
     }
     return (*this);
 }

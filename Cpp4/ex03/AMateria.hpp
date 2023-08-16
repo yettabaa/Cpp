@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 21:32:45 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/15 20:59:41 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/08/16 21:59:00 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <iomanip>
 #include <iostream>
 
+
 #include "ICharacter.hpp"
 
 class ICharacter;
@@ -24,14 +25,12 @@ class AMateria
 {
 protected:
     std::string type;
-    // [...]
 public:
     AMateria();
     AMateria& operator=(const AMateria &overl);
     AMateria(const AMateria &copy);
     AMateria(std::string const & type);
-    // [...]
-    std::string const & getType() const; //Returns the materia type
+    std::string const & getType() const;
     virtual AMateria* clone() const = 0;
     virtual ~AMateria();
     virtual void use(ICharacter& target);

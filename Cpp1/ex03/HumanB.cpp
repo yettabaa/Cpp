@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 05:31:48 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/09 12:46:47 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/08/16 17:28:11 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 HumanB::HumanB(std::string name):name(name)
 {
     std::cout << "HumanB Constructor called" <<std::endl;
-    weapon = nullptr;
+    weapon = NULL;
 }
 
 HumanB::~HumanB()

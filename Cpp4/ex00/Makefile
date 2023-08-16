@@ -2,7 +2,7 @@ CC = c++
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-FILES = main.cpp Animal.cpp Dog.cpp Cat.cpp 
+FILES = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp
 
 OFILES = $(FILES:.cpp=.o)
 
@@ -13,7 +13,7 @@ all:	$(NAME)
 $(NAME):	$(OFILES)
 		$(CC) $(FLAGS) $(OFILES) -o $(NAME)
 		 
-%.o: %.cpp Animal.hpp Dog.hpp Cat.hpp
+%.o: %.cpp Animal.hpp Dog.hpp Cat.hpp WrongAnimal.hpp WrongCat.hpp
 	$(CC) $(FLAGS) -c $< -o $@
 
 clean:

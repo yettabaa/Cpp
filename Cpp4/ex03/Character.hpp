@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 23:53:12 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/16 00:21:25 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/08/16 18:35:15 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ private:
     int i;
     std::string name;
     AMateria *slots[4];
-    AMateria *holder[13]; //
+    // AMateria *holder[13]; //
 public:
     Character(); 
     Character& operator=(const Character &overl);
