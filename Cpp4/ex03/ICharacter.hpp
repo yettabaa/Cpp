@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 23:33:49 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/14 23:47:53 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/08/16 01:21:43 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include "AMateria.hpp"
 
-
+class AMateria;
 
 class ICharacter
 {

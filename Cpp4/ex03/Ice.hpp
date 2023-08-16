@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 21:54:25 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/14 22:02:39 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/08/15 16:39:39 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ public:
     Ice();
     Ice& operator=(const Ice &overl);
     Ice(const Ice &copy);
-    ~Ice();
     virtual AMateria* clone() const;
+    virtual ~Ice();
 };
 
 #endif

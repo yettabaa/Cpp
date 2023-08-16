@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 21:55:07 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/14 22:14:53 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/08/15 17:36:30 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ Ice::Ice(const Ice &copy)
 
 Ice::~Ice() {}
 
-AMateria* AMateria::clone() const
+AMateria* Ice::clone() const
 {
     return (new Ice);
 }
+

@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 22:10:19 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/14 22:15:00 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/08/15 19:11:56 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Cure::Cure()
 {
-    type = "Cure";
+    type = "cure";
 }
 
 Cure& Cure::operator=(const Cure &overl)
@@ -31,7 +31,7 @@ Cure::Cure(const Cure &copy)
 
 Cure::~Cure() {}
 
-AMateria* AMateria::clone() const
+AMateria* Cure::clone() const
 {
     return (new Cure);
 }
