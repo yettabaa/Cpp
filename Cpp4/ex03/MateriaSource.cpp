@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 23:49:40 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/16 22:43:14 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/08/16 22:49:04 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,12 @@
 
 MateriaSource::MateriaSource()
 {
-    std::cout << "MateriaSource Default constructor called" << std::endl;
     for (int i = 0; i < 4; i++)
         materias[i] = NULL;
 }
 
 MateriaSource& MateriaSource::operator=(const MateriaSource &overl)
 {
-    std::cout << "MateriaSource Copy assignment operator called" << std::endl;
     if (this != &overl)
     {
         for (int i = 0; i < 4; i++)
@@ -40,7 +38,6 @@ MateriaSource& MateriaSource::operator=(const MateriaSource &overl)
 
 MateriaSource::MateriaSource(const MateriaSource &copy)
 {
-    std::cout << "MateriaSource Copy constructor called" << std::endl;
     for (int i = 0; i < 4; i++)
         materias[i] = NULL;
     *this = copy;
@@ -48,7 +45,6 @@ MateriaSource::MateriaSource(const MateriaSource &copy)
 
 MateriaSource::~MateriaSource()
 {
-    std::cout << "MateriaSource Destructor called" << std::endl;
     for (int i = 0; i < 4; i++)
     {
         delete materias[i];

@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 23:54:19 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/16 22:15:42 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/08/16 22:48:49 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 Character::Character() 
 {
-    std::cout << "Character Default constructor called" << std::endl;
     for (int i = 0; i < 4; i++)
         slots[i] = NULL;
     name = "default";    
@@ -22,7 +21,6 @@ Character::Character()
 
 Character::Character(const std::string &name)
 {
-    std::cout << "Character Parameterized constructor called" << std::endl;
     for (int i = 0; i < 4; i++)
         slots[i] = NULL;
     this->name = name;
@@ -30,7 +28,6 @@ Character::Character(const std::string &name)
 
 Character& Character::operator=(const Character &overl)
 {
-    std::cout << "Character Copy assignment operator called" << std::endl;
     if (this != &overl)
     {
         for (int i = 0; i < 4; i++)
@@ -49,7 +46,6 @@ Character& Character::operator=(const Character &overl)
 
 Character::Character(const Character &copy) 
 {
-    std::cout << "Character Copy constructor called" << std::endl;
     for (int i = 0; i < 4; i++)
         slots[i] = NULL;
     *this = copy;
@@ -57,7 +53,6 @@ Character::Character(const Character &copy)
 
 Character::~Character() 
 {
-    std::cout << "Character Destructor called" << std::endl;  
     for (int i = 0; i < 4; i++) 
     {
         delete slots[i];
