@@ -6,14 +6,13 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/12 20:07:49 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/16 19:13:38 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/08/17 02:26:50 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ANIMAL_HPP
 #define ANIMAL_HPP
 
-#include <iomanip>
 #include <iostream>
 
 class Animal
@@ -28,8 +27,5 @@ public:
     virtual void makeSound(void) const;
     const std::string& getType(void) const;
 };
-
-#include "Cat.hpp"
-#include "Dog.hpp"
 
 #endif

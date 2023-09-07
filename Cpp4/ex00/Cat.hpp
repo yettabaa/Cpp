@@ -6,13 +6,14 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 13:59:56 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/16 19:13:32 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/08/17 02:26:55 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CAT_HPP
 #define CAT_HPP
 
+#include <iostream>
 #include "Animal.hpp"
 
 class Cat : public Animal

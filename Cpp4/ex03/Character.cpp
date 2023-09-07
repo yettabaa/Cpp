@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 23:54:19 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/16 22:48:49 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/08/18 01:42:58 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ Character& Character::operator=(const Character &overl)
         for (int i = 0; i < 4; i++)
         {
             delete slots[i];
-            slots[i] = NULL; // change to NULL
+            slots[i] = NULL;
             if (overl.slots[i])
             {
                 slots[i] = overl.slots[i]->clone();
@@ -74,7 +74,7 @@ void Character::equip(AMateria* m)
         i++;
     if (i == 4)
     {
-        std::cout << "Error: you should unequip materias" << std::endl; // edit
+        std::cout << "Error: you should unequip materias" << std::endl;
         return ;
     }
     slots[i] = m->clone();
@@ -85,8 +85,8 @@ void Character::unequip(int idx)
 {
     if (idx < 0 || idx > 3 || !slots[idx])
     {
-        std::cout << "Error: you can't unequip the index " << idx << " !" << std::endl; //!!
-        return ; //shi msg
+        std::cout << "Error: you can't unequip the index " << idx << " !" << std::endl;
+        return ;
     }
     slots[idx] = NULL;
 }
@@ -95,8 +95,8 @@ void Character::use(int idx, ICharacter& target)
 {
     if (idx < 0 || idx > 3 || !slots[idx])
     {
-        std::cout << "Error: There nothing to use !" << std::endl; // !!
-        return ; //shi msg
+        std::cout << "Error: There nothing to use !" << std::endl;
+        return ;
     }
     slots[idx]->use(target);
 }

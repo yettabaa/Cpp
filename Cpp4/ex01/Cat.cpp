@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 14:01:09 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/16 21:45:00 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/08/17 23:49:14 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,5 @@ void Cat::makeSound(void) const
 void Cat::makeBrain(void) const
 {
     std::cout << "Brain Cat:" << std::endl;
-    for(int i = 0; i < 100; i++)
-        std::cout << brain->ideas[i] << " ";
-    std::cout << std::endl;       
+    brain->makeBrain();    
 }

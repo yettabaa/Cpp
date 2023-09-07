@@ -15,7 +15,11 @@ class A
 int main(int argc, char const *argv[])
 {
     // int *i = new int[4];
-    printf("%lu\n", sizeof(A));
+     float a = 13.5;
+    // a << 8;
+    int b = 13;
+    b = b << 8;
+    printf("%f    %d\n", a, b);
 
     
 }

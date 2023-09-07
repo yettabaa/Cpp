@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 16:17:01 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/16 21:45:05 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/08/17 23:48:57 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,6 @@ void Dog::makeSound(void) const
 void Dog::makeBrain(void) const
 {
     std::cout << "Brain Dog:" << std::endl;
-    for(int i = 0; i < 100; i++)
-        std::cout << brain->ideas[i] << " ";
-    std::cout << std::endl;       
+    brain->makeBrain();    
 }
 

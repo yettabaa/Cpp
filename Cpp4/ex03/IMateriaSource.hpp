@@ -6,17 +6,15 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 23:45:40 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/16 15:17:35 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/08/18 01:34:08 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef IMATERIASOURCE_HPP
 #define IMATERIASOURCE_HPP
 
-#include <iomanip>
 #include <iostream>
-
-#include "AMateria.hpp"
+class AMateria;
 
 class IMateriaSource
 {

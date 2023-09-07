@@ -6,26 +6,26 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/12 20:30:36 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/16 22:10:44 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/08/17 23:56:08 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AAnimal.hpp"
-
+#include "Cat.hpp"
+#include "Dog.hpp"
 void f()
 {
     system("leaks a.out");
 }
-
 int main() 
 {
-
     // AAnimal aanimal;
 
     const AAnimal* j = new Dog(); 
     const AAnimal* i = new Cat();
-    delete j;//should not create a leak 
+
+    delete j;
     delete i;
+
     std::cout << "--------------------------------" << std::endl;
     AAnimal **array_of_animal = new AAnimal*[6];
     for(int i = 0; i < 3 ; i++)
@@ -39,8 +39,6 @@ int main()
     for(int i = 0; i < 6; i++)
         delete array_of_animal[i];
     delete[] array_of_animal;
-    // atexit (f);
-
-    //  ...
+// atexit (f);
     return 0; 
 }

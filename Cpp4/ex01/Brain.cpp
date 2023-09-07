@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 16:39:44 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/14 17:40:05 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/08/17 23:52:53 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,7 @@ Brain::Brain(const std::string &name)
 {
     std::cout << "Brain Default constructor called" << std::endl;
     for(int i = 0; i < 100; i++)
-            ideas[i] = name ;
-    // for(int i = 0; i < 100; i++)
-    //     std::cout << i + 1 << "_" << ideas[i] << " ";
-    // std::cout << std::endl;    
+            ideas[i] = name ; 
 }
 
 Brain& Brain::operator=(const Brain &overl)
@@ -47,4 +44,11 @@ Brain::Brain(const Brain &copy)
 Brain::~Brain()
 {
     std::cout << "Brain Destructor called" << std::endl;
+}
+
+void Brain::makeBrain(void) const
+{
+    for(int i = 0; i < 100; i++)
+        std::cout << ideas[i] << " ";
+    std::cout << std::endl;       
 }

@@ -6,18 +6,14 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 21:32:45 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/16 21:59:00 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/08/18 01:33:56 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef AMATERIA_HPP
 #define AMATERIA_HPP
 
-#include <iomanip>
 #include <iostream>
-
-
-#include "ICharacter.hpp"
 
 class ICharacter;
 
@@ -35,8 +31,5 @@ public:
     virtual ~AMateria();
     virtual void use(ICharacter& target);
 };
-
-#include "Cure.hpp"
-#include "Ice.hpp"
 
 #endif

@@ -6,13 +6,14 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 16:15:23 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/14 18:52:11 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/08/17 02:36:29 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DOG_HPP
 #define DOG_HPP
 
+#include <iostream>
 #include "AAnimal.hpp"
 #include "Brain.hpp"
 

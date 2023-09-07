@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 19:17:07 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/16 19:18:05 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/08/16 22:52:10 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 WrongCat::WrongCat()
 {
     std::cout << "WrongCat Default constructor called" << std::endl;
-    // std::cout << &type <<std::endl;
     type = "WrongCat";
 }
 

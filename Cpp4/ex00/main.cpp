@@ -6,17 +6,13 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/12 20:30:36 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/16 19:38:01 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/08/17 22:39:44 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "WrongAnimal.hpp"
-
-void f()
-{
-    system("leaks a.out");
-}
+#include "Cat.hpp"
+#include "Dog.hpp"
+#include "WrongCat.hpp"
 
 int main() 
 {
@@ -52,6 +48,5 @@ int main()
         delete i;
         delete meta;
     }
-    // atexit (f);
     return 0; 
 }

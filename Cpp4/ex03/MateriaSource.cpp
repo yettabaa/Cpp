@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 23:49:40 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/16 22:49:04 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/08/18 01:38:15 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ MateriaSource& MateriaSource::operator=(const MateriaSource &overl)
         for (int i = 0; i < 4; i++)
         {
             delete materias[i];
-            materias[i] = NULL; // change to NULL
+            materias[i] = NULL;
             if (overl.materias[i])
             {
                 materias[i] = overl.materias[i]->clone();
@@ -62,7 +62,8 @@ void MateriaSource::learnMateria(AMateria* materias)
         std::cout << "Error: You can learn just 4 materias !" << std::endl;
         return ;
     }
-    this->materias[i] = materias;
+    this->materias[i] = materias->clone();
+    *this->materias[i] = *materias;
 }
 
 AMateria* MateriaSource::createMateria(std::string const & type)

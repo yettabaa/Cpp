@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 23:16:58 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/10 17:54:01 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/08/17 23:28:05 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int main( void )
     Fixed a;
     Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
     Fixed const c( Fixed( 5.05f ) / Fixed( 0 ) );
-    
+   
     std::cout << c << std::endl;
     std::cout << a << std::endl;
     std::cout << ++a << std::endl;

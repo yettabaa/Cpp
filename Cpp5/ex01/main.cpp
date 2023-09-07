@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/13 16:39:49 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/17 23:53:46 by yettabaa         ###   ########.fr       */
+/*   Created: 2023/09/03 15:58:15 by yettabaa          #+#    #+#             */
+/*   Updated: 2023/09/07 21:30:25 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_HPP
-#define BRAIN_HPP
+#include "Bureaucrat.hpp"
 
-#include <iostream>
-
-class Brain
+int main()
 {
-private:
-    std::string ideas[100];
-public:
-    Brain();
-    Brain(const std::string &name);
-    Brain& operator=(const Brain &overl);
-    Brain(const Brain& copy);
-    ~Brain();
-    void makeBrain(void) const;
-};
-
-#endif
+    try
+    {
+        Bureaucrat bureaucrat("test", 150);
+        bureaucrat.decrement_grade();
+    } 
+    catch (std::exception & e)
+    {
+        std::cout << e.what() << std::endl;
+        // printf("%s\n", e.what());
+    }
+}

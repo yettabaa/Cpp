@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 16:39:44 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/16 22:09:06 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/08/17 23:52:59 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,11 @@ Brain::Brain(const Brain &copy)
 Brain::~Brain()
 {
     std::cout << "Brain Destructor called" << std::endl;
+}
+
+void Brain::makeBrain(void) const
+{
+    for(int i = 0; i < 100; i++)
+        std::cout << ideas[i] << " ";
+    std::cout << std::endl;       
 }

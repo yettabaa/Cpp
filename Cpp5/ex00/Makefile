@@ -2,7 +2,7 @@ CC = c++
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-FILES = main.cpp AMateria.cpp Cure.cpp Ice.cpp Character.cpp MateriaSource.cpp
+FILES = main.cpp Bureaucrat.cpp
 
 OFILES = $(FILES:.cpp=.o)
 
@@ -13,7 +13,7 @@ all:	$(NAME)
 $(NAME):	$(OFILES)
 		$(CC) $(FLAGS) $(OFILES) -o $(NAME)
 		 
-%.o: %.cpp AMateria.hpp Cure.hpp Ice.hpp Character.hpp ICharacter.hpp IMateriaSource.hpp MateriaSource.hpp
+%.o: %.cpp Bureaucrat.hpp
 	$(CC) $(FLAGS) -c $< -o $@
 
 clean:

@@ -6,14 +6,16 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 23:48:52 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/16 16:07:19 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/08/18 01:23:42 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MATERIASOURCE_HPP
 #define MATERIASOURCE_HPP
 
+#include <iostream>
 #include "IMateriaSource.hpp"
+#include "AMateria.hpp"
 
 class MateriaSource : public IMateriaSource
 {
@@ -28,7 +30,6 @@ public:
     virtual void learnMateria(AMateria* materias);
     virtual AMateria* createMateria(std::string const & type);
 };
-#include "Ice.hpp"
-#include "Cure.hpp" 
+
  
 #endif

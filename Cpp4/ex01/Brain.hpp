@@ -6,25 +6,26 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 16:39:49 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/14 15:33:31 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/08/17 23:54:01 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BRAIN_HPP
 #define BRAIN_HPP
 
-#include <iomanip>
 #include <iostream>
 
 class Brain
 {
-public:
+private:
     std::string ideas[100];
+public:
     Brain();
     Brain(const std::string &name);
     Brain& operator=(const Brain &overl);
     Brain(const Brain& copy);
     ~Brain();
+    void makeBrain(void) const;
 };
 
 #endif
