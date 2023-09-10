@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 15:58:11 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/09/08 22:30:01 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/09/10 02:48:37 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #define BUREAUCRAT_HPP
 
 #include <iostream>
-#include "Form.hpp"
+#include "AForm.hpp"
 
 class Bureaucrat
 {
@@ -48,7 +48,8 @@ public:
     const int& getGrade() const;
     void increment_grade();
     void decrement_grade();
-    void signForm(const Form& form);
+    void signForm(const AForm& form);
+    void executeForm(AForm const & form);
 };
 
 std::ostream& operator<<(std::ostream& out, const Bureaucrat& over);

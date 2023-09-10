@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 15:58:08 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/09/08 22:31:08 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/09/10 02:49:40 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,11 +84,16 @@ std::ostream& operator<<(std::ostream& out, const Bureaucrat& over)
     return out;
 }
 
-void Bureaucrat::signForm(const Form& form)
+void Bureaucrat::signForm(const AForm& form)
 {
     if (form.getIsSigned())
         std::cout << name << " signed " << form.getName() << std::endl;
     else
         std::cout << name << " couldn’t sign " << form.getName() 
         << " because he doesn't have required grade" << std::endl;
+}
+
+void Bureaucrat::executeForm(AForm const & form)
+{
+    
 }

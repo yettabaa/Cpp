@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                           :+:      :+:    :+:   */
+/*   AForm.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,14 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FORM_HPP
-#define FORM_HPP
+#ifndef AFORM_HPP
+#define AFORM_HPP
 
 #include <iostream>
 // #include "Bureaucrat.hpp"
 class Bureaucrat;
 
-class Form
+class AForm
 {
 private:
 	const std::string name;
@@ -41,18 +41,19 @@ public:
 	public:
 		GradeTooLowException(const char* message);
 	};
-	Form();
-	Form(const std::string& name, const int& GradeToSign, const int& GradeToExecute);
-	Form& operator=(const Form& overl);
-	Form(const Form& copy);
-	~Form();
+	AForm();
+	AForm(const std::string& name, const int& GradeToSign, const int& GradeToExecute);
+	AForm& operator=(const AForm& overl);
+	AForm(const AForm& copy);
+	virtual ~AForm();
 	const std::string& getName() const;
 	const bool& getIsSigned() const;
 	const int& getGradeToSign() const;
 	const int& getGradeToExecute() const;
 	void beSigned(const Bureaucrat& bureaucrat);
+	virtual void execute(Bureaucrat const & executor) const = 0;
 };
 
-std::ostream& operator<<(std::ostream& out, const Form& over);
+std::ostream& operator<<(std::ostream& out, const AForm& over);
 
 #endif
