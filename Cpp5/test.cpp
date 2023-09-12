@@ -80,9 +80,11 @@ int main(int argc, char const *argv[])
     //             << "                              ;%@@@@%%:;;;. \n"
     //             << "                          ...;%@@@@@%%:;;;;,.." << std::endl;
     // return 0;
-    unsigned seed = std::time(0); // You can use any unsigned integer as the seed
-    srand(seed); // Seed the random number generator with the value 42
-    std::cout << std::rand() << std::endl;
+    // unsigned seed = std::time(0); // You can use any unsigned integer as the seed
+    // srand(seed); // Seed the random number generator with the value 42
+    // std::cout << std::rand() << std::endl;
+    std::string zab;
+    zab.c_str()
 
     // Now, you can use the rand() function to generate random numbers
 

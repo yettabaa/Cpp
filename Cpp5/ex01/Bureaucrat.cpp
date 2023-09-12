@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 15:58:08 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/09/08 22:31:08 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/09/12 02:23:58 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,13 @@ Bureaucrat::GradeTooLowException::GradeTooLowException(const char* message) : me
 
 const char* Bureaucrat::GradeTooHighException::what() const throw()
 {
+    std::cerr << "Grade is too high, ";
     return (message);
 }
 
 const char* Bureaucrat::GradeTooLowException::what() const throw()
 {
+    std::cerr << "Grade is too low, ";
     return (message);
 }
 
@@ -34,9 +36,9 @@ Bureaucrat::Bureaucrat() : name("default")
 Bureaucrat::Bureaucrat(const std::string& name, const int& grade) : name(name)
 {
     if (grade <= 0)
-        throw GradeTooHighException ("Bureaucrat creation failed, Grade is too high");
+        throw GradeTooHighException ("Bureaucrat creation failed.");
     if (grade > 150)
-        throw GradeTooLowException ("Bureaucrat creation failed, Grade is too low");
+        throw GradeTooLowException ("Bureaucrat creation failed.");
     this->grade = grade;
 }
 
@@ -47,9 +49,13 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& overl)
     return(*this);
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat& copy)
+Bureaucrat::Bureaucrat(const Bureaucrat& copy) : name(copy.name)
 {
     *this = copy;
+    if (grade <= 0)
+        throw GradeTooHighException ("Bureaucrat creation failed.");
+    if (grade > 150)
+        throw GradeTooLowException ("Bureaucrat creation failed.");
 }
 
 Bureaucrat::~Bureaucrat() {}

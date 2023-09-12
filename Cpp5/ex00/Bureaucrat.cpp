@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 15:58:08 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/09/07 21:33:27 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/09/12 02:24:58 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& overl)
     return(*this);
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat& copy)
+Bureaucrat::Bureaucrat(const Bureaucrat& copy) : name(copy.name)
 {
     *this = copy;
 }

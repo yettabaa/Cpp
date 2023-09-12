@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 15:58:15 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/09/09 20:39:51 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/09/11 23:37:37 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ int main()
 {
     try
     {
-        Form form("testForm", 150, 1);
+        Form form("testForm", 150, 151);
         std::cout << form << std::endl;
-        Bureaucrat bureaucrat("testBureaucrat", 150);
+        Bureaucrat bureaucrat("testBureaucrat", 0);
         std::cout << bureaucrat << std::endl;
         form.beSigned(bureaucrat);
         
@@ -26,7 +26,7 @@ int main()
     } 
     catch (std::exception & e)
     {
-        std::cout << e.what() << std::endl;
+        std::cerr << e.what() << std::endl;
         // printf("%s\n", e.what());
     }
 }

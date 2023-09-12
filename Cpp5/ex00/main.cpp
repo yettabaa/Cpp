@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 15:58:15 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/09/07 21:30:25 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/09/11 23:30:01 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int main()
     } 
     catch (std::exception & e)
     {
-        std::cout << e.what() << std::endl;
+        std::cerr << e.what() << std::endl;
         // printf("%s\n", e.what());
     }
 }
