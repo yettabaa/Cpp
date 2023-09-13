@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 15:58:08 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/09/12 02:27:19 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/09/12 23:44:19 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,11 @@ Bureaucrat::Bureaucrat() : name("default")
 
 Bureaucrat::Bureaucrat(const std::string& name, const int& grade) : name(name)
 {
+    this->grade = grade;
     if (grade <= 0)
         throw GradeTooHighException ("Bureaucrat creation failed, Grade is too high");
     if (grade > 150)
         throw GradeTooLowException ("Bureaucrat creation failed, Grade is too low");
-    this->grade = grade;
 }
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& overl) 

@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 02:06:08 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/09/12 02:52:02 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/09/12 22:48:17 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,15 @@
 
 class Intern
 {
-private:
-
 public:
+    class ThrowErros : public std::exception // we can add virtual????
+    {
+    private:
+    	const char* message;
+    	virtual const char* what() const throw();
+    public:
+    	ThrowErros(const char* message);
+    };
     Intern();
     Intern& operator=(const Intern& overl);
     Intern(const Intern& copy);

@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 21:30:49 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/09/12 00:37:09 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/09/13 00:46:02 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,5 +69,4 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 			<< "                               ;%@@@@%::;.          \n"
 			<< "                              ;%@@@@%%:;;;. \n"
 			<< "                          ...;%@@@@@%%:;;;;,.." << std::endl;
-	
 }

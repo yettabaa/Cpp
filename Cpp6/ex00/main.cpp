@@ -5,26 +5,22 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/03 15:58:15 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/09/12 23:47:29 by yettabaa         ###   ########.fr       */
+/*   Created: 2023/09/13 00:34:04 by yettabaa          #+#    #+#             */
+/*   Updated: 2023/09/13 04:18:37 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
+#include "ScalarConverter.hpp"
 
-int main()
+int main(int ac, char const *av[])
 {
-    try
+    if (ac != 2)
     {
-        Bureaucrat bureaucrat("test", 1);
-        std::cout << bureaucrat << std::endl;
-        bureaucrat.decrement_grade();
-        std::cout << bureaucrat << std::endl;
-        bureaucrat.increment_grade();
-        std::cout << bureaucrat << std::endl;
-    } 
-    catch (std::exception & e)
-    {
-        std::cerr << e.what() << std::endl;
+        std::cerr << "invalid number of argument!" << std::endl;
+        return (1);
     }
+    const std::string literal = av[1];
+    ScalarConverter obj;
+    obj.convert(literal);
+    return 0;
 }
