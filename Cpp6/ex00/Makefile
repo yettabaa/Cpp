@@ -2,7 +2,7 @@ CC = c++
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-FILES = main.cpp ScalarConverter.cpp 
+FILES = main.cpp ScalarConverter.cpp utils.cpp
 
 OFILES = $(FILES:.cpp=.o)
 
@@ -13,7 +13,7 @@ all:	$(NAME)
 $(NAME):	$(OFILES)
 		$(CC) $(FLAGS) $(OFILES) -o $(NAME)
 		 
-%.o: %.cpp ScalarConverter.hpp
+%.o: %.cpp ScalarConverter.hpp utils.hpp
 	$(CC) $(FLAGS) -c $< -o $@
 
 clean:

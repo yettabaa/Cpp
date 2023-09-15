@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 01:39:08 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/09/13 04:49:19 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/09/15 04:28:26 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,24 @@
 #define SCALARCONVERTER_HPP
 
 #include <iostream>
-
-class ScalarConverter
+//Static member functions are not associated with an instance of a class, 
+//so they do not have a this pointer,
+class ScalarConverter //static
 {
 private:
-
-public:
+    static void toChar(const std::string& literal);
+    static void toInt(const std::string& literal);
+    static void toFloat(const std::string& literal);
+    static void toDouble(const std::string& literal);
+    static void toInfs(const std::string& literal);
+    static const char* checker(const std::string& literal);
     ScalarConverter();
-    ScalarConverter& operator=(const ScalarConverter& overl);
-    ScalarConverter(const ScalarConverter& copy);
     ~ScalarConverter();
-    void convert(const std::string& literal);
-    const char* checker(const std::string& literal);
-    // char toChar(const std::string& literal);
-    // int toInt(const std::string& literal);
-    // float toFloat(const std::string& literal);
-    // double toDouble(const std::string& literal);
+    ScalarConverter(const ScalarConverter& copy);
+    ScalarConverter& operator=(const ScalarConverter& overl);
+public:
+    static void convert(const std::string& literal);
 };
-int countCharacter(const std::string& str, char target);
-int checkFloat(const std::string& str);
+
 
 #endif

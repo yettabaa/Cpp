@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   utils.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/13 00:34:04 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/09/15 04:23:27 by yettabaa         ###   ########.fr       */
+/*   Created: 2023/09/13 23:47:45 by yettabaa          #+#    #+#             */
+/*   Updated: 2023/09/15 01:20:55 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+#ifndef UTILS_HPP
+#define UTILS_HPP
 
-int main(int ac, char const *av[])
-{
-    if (ac != 2)
-    {
-        std::cerr << "invalid number of argument!" << std::endl;
-        return (1);
-    }
-    const std::string literal = av[1];
-    // ScalarConverter obj;
-    ScalarConverter::convert(literal);
-    
-    return 0;
-}
+#include <iostream>
+#define FLOAT 0
+#define DOUBLE 1
+#define INT 2
+
+int countCharacter(const std::string& str, char target);
+int checkFloat(const std::string& str, int flag);
+int Checksign(const std::string& str, int flag);
+
+#endif
