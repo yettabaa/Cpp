@@ -5,23 +5,28 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/13 00:34:04 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/09/15 22:28:59 by yettabaa         ###   ########.fr       */
+/*   Created: 2023/09/16 01:03:56 by yettabaa          #+#    #+#             */
+/*   Updated: 2023/09/16 01:29:32 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+#include "Serializer.hpp"
 
-int main(int ac, char const *av[])
+int main()
 {
-    if (ac != 2)
-    {
-        std::cerr << "invalid number of argument!" << std::endl;
-        return (1);
-    }
-    const std::string literal = av[1];
-    // ScalarConverter obj;
-    ScalarConverter::convert(literal);
-    
+    Data data;
+    Data *hold;
+    uintptr_t ptr;
+
+    data.i = 13;
+    data.j = 37;
+    data.c = 'o';
+    ptr = Serializer::serialize(&data);
+    std::cout << &data << std::endl;
+    std::cout << "i = " << data.i << " ,j = " << data.j << " ,c = " << data.c << std::endl;
+    hold = Serializer::deserialize(ptr);
+    std::cout << hold << std::endl;
+    std::cout << "i = " << hold->i << " ,j = " << hold->j << " ,c = " << hold->c << std::endl;
+    std::cout << std::hex << ptr << std::endl;
     return 0;
 }

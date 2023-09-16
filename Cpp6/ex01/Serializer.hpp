@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Serializer.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/13 00:34:04 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/09/15 22:28:59 by yettabaa         ###   ########.fr       */
+/*   Created: 2023/09/15 23:38:24 by yettabaa          #+#    #+#             */
+/*   Updated: 2023/09/15 23:56:15 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+#ifndef SERIALIZER_HPP
+#define SERIALIZER_HPP
 
-int main(int ac, char const *av[])
+#include <iostream>
+#include "Data.hpp"
+
+class Serializer
 {
-    if (ac != 2)
-    {
-        std::cerr << "invalid number of argument!" << std::endl;
-        return (1);
-    }
-    const std::string literal = av[1];
-    // ScalarConverter obj;
-    ScalarConverter::convert(literal);
-    
-    return 0;
-}
+private:
+    Serializer();
+    Serializer& operator=(const Serializer& overl);
+    Serializer(const Serializer& copy);
+    ~Serializer();
+public:
+    static uintptr_t serialize(Data* ptr);
+    static Data* deserialize(uintptr_t raw);
+};
+
+#endif

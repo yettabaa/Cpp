@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 01:40:27 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/09/15 04:28:23 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/09/15 23:24:48 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,12 +63,12 @@ void ScalarConverter::toInt(const std::string& literal)
     std::stringstream hold(literal);
     
     hold >> scalar;
-    if (hold.fail() || hold.bad())
+    if (hold.fail())//|| hold.bad()) // ???
     {
         std::cerr << "an overflow occure" << std::endl;
         exit(1);
     }
-        
+    
     (isprint(static_cast<char> (scalar))) && (std::cout << "char: \'" << static_cast<char> (scalar) << "\'" << std::endl);
     (!isprint(static_cast<char> (scalar))) && (std::cout << "char: Non displayable" << std::endl);
     std::cout << "int: " << static_cast<int> (scalar) << std::endl;
