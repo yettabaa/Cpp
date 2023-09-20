@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 01:40:27 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/09/15 23:24:48 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/09/17 00:44:28 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <sstream>
 #include <iomanip>
 #include <cmath>
-
+// It's similar to C-style casting but more explicit. It performs type checking during compilation when possible
 ScalarConverter::ScalarConverter() {}
 
 ScalarConverter& ScalarConverter::operator=(const ScalarConverter& overl)
@@ -69,8 +69,12 @@ void ScalarConverter::toInt(const std::string& literal)
         exit(1);
     }
     
-    (isprint(static_cast<char> (scalar))) && (std::cout << "char: \'" << static_cast<char> (scalar) << "\'" << std::endl);
-    (!isprint(static_cast<char> (scalar))) && (std::cout << "char: Non displayable" << std::endl);
+    // (isprint(static_cast<char> (scalar))) && (std::cout << "char: \'" << static_cast<char> (scalar) << "\'" << std::endl);
+    // (!isprint(static_cast<char> (scalar))) && (std::cout << "char: Non displayable" << std::endl);
+    if (isprint(static_cast<char> (scalar)) && scalar < 128)
+        std::cout << "char: \'" << static_cast<char> (scalar) << "\'" << std::endl;
+    else
+        std::cout << "char: Non displayable" << std::endl;
     std::cout << "int: " << static_cast<int> (scalar) << std::endl;
     std::cout << std::fixed << std::setprecision(1);
     std::cout << "float: " << static_cast<float> (scalar) << "f" << std::endl;
@@ -83,8 +87,11 @@ void ScalarConverter::toFloat(const std::string& literal)
     // std::stringstream hold(literal.substr(0, literal.size() - 1));
     
     // hold >> scalar;
-    (isprint(static_cast<char> (scalar))) && (std::cout << "char: \'" << static_cast<char> (scalar) << "\'" << std::endl);
-    (!isprint(static_cast<char> (scalar))) && (std::cout << "char: Non displayable" << std::endl);
+    if (isprint(static_cast<char> (scalar)) && scalar < 128)
+        std::cout << "char: \'" << static_cast<char> (scalar) << "\'" << std::endl;
+    else
+        std::cout << "char: Non displayable" << std::endl;
+    // (!isprint(static_cast<char> (scalar))&& scalar >= 128) && (std::cout << "char: Non displayable" << std::endl);
     std::cout << "int: " << static_cast<int> (scalar) << std::endl;
     (!(scalar - static_cast<int>(scalar))) && std::cout << std::fixed << std::setprecision(1);
     std::cout << "float: " << static_cast<float> (scalar) << "f" << std::endl;
@@ -97,8 +104,13 @@ void ScalarConverter::toDouble(const std::string& literal)
     // std::stringstream hold(literal);
     
     // hold >> scalar;
-    (isprint(static_cast<char> (scalar))) && (std::cout << "char: \'" << static_cast<char> (scalar) << "\'" << std::endl);
-    (!isprint(static_cast<char> (scalar))) && (std::cout << "char: Non displayable" << std::endl);
+    // printf("==> %c\n", static_cast<char> (scalar));
+    // (isprint(static_cast<char> (scalar))) && (std::cout << "char: \'" << static_cast<char> (scalar) << "\'" << std::endl);
+    // (!isprint(static_cast<char> (scalar))) && (std::cout << "char: Non displayable" << std::endl);
+    if (isprint(static_cast<char> (scalar)) && scalar < 128)
+        std::cout << "char: \'" << static_cast<char> (scalar) << "\'" << std::endl;
+    else
+        std::cout << "char: Non displayable" << std::endl;
     std::cout << "int: " << static_cast<int> (scalar) << std::endl;
     (!(scalar - static_cast<int>(scalar))) && std::cout << std::fixed << std::setprecision(1);
     std::cout << "float: " << static_cast<float> (scalar) << "f" << std::endl;

@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 01:39:08 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/09/15 22:29:15 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/09/16 23:25:33 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 //so they do not have a this pointer,
 class ScalarConverter //static
 {
-private:
+private: // desplayable caract
     static void toChar(const std::string& literal);
     static void toInt(const std::string& literal);
     static void toFloat(const std::string& literal);
