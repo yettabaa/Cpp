@@ -66,7 +66,8 @@
         "deque": "cpp",
         "stack": "cpp",
         "any": "cpp",
-        "filesystem": "cpp"
+        "filesystem": "cpp",
+        "numeric": "cpp"
     },
     "files.autoSave": "afterDelay"
 }

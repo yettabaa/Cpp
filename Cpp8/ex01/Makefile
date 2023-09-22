@@ -2,18 +2,18 @@ CC = c++
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-FILES = main.cpp
+FILES = main.cpp Span.cpp
 
 OFILES = $(FILES:.cpp=.o)
 
-NAME = easyfind
+NAME = Span
 
 all:	$(NAME)
 
 $(NAME):	$(OFILES)
 		$(CC) $(FLAGS) $(OFILES) -o $(NAME)
 		 
-%.o: %.cpp easyfind.hpp
+%.o: %.cpp Span.hpp
 	$(CC) $(FLAGS) -c $< -o $@
 
 clean:
