@@ -67,7 +67,8 @@
         "stack": "cpp",
         "any": "cpp",
         "filesystem": "cpp",
-        "numeric": "cpp"
+        "numeric": "cpp",
+        "list": "cpp"
     },
     "files.autoSave": "afterDelay"
 }

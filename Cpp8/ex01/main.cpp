@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 01:40:28 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/09/22 02:51:37 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/09/27 00:00:18 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@ int main()
         sp.addNumber(11);
         // sp.addNumber(11);
         Span sp2(100000);
-        int tab[10] = ;
-        srand(time(NULL));
-        for (int i = 0; i < 10; i++)
-            tab[i] = std::abs(rand());
+        int tab[10] = {4,1,2,5,4,10,11,20,90,-10};
+        // srand(time(NULL));
+        // for (int i = 0; i < 10; i++)
+        //     tab[i] = std::abs(rand());
         sp2.addSequence(tab, sizeof(tab) / sizeof(int));
         // swab tablo 7et fih random value u qarn dakshi wach huwa li t7et
         std::cout << sp.shortestSpan() << std::endl;
