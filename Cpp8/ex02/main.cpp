@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 01:10:04 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/09/28 00:37:59 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/09/28 01:44:03 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ int main()
     mstack.push(0);
     MutantStack<int>::iterator it = mstack.begin();
     MutantStack<int>::iterator ite = mstack.end();
+    // MutantStack<int>::stack<int>::container_type::iterator it = mstack.begin();
+    // MutantStack<int>::stack<int>::container_type::iterator ite = mstack.end();
     ++it;
     --it;
     while (it != ite) 

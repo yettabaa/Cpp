@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 04:47:29 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/09/19 22:58:38 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/09/28 23:04:46 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #define ARRAY_HPP
 
 //new call contructor and delete call destructor of an object malloc and free dont 
-template <class T>
+template <class T> // class is used to declar this T as class type
 class Array
 {
 private:

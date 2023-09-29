@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/12 20:30:36 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/17 23:52:07 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/09/29 05:14:45 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,10 @@ int main()
     for(int i = 0; i < 6; i++)
         delete array_of_animal[i];
     delete[] array_of_animal;
-    // atexit (f);
+    Dog a;
+    Dog b;
+    a=b;
+    
+    atexit (f);
     return 0; 
 }

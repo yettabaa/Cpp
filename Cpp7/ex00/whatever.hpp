@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 19:54:16 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/09/19 04:12:41 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/09/28 23:05:19 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 //function for each different set of types we want to work with:
 //The solution to this was to create a function template that the compiler can use to
 // instantiate normal functions for whichever set of types we need:
-template <typename T> void swap(T& a, T& b)
+template <typename T> void swap(T& a, T& b) // type is used to declar this T as type
 {
     T c;
     c = a;

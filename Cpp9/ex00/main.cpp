@@ -1,37 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Span.hpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/21 01:40:33 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/09/28 22:30:18 by yettabaa         ###   ########.fr       */
+/*   Created: 2023/09/29 00:56:10 by yettabaa          #+#    #+#             */
+/*   Updated: 2023/09/29 04:22:22 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SPAN_HPP
-#define SPAN_HPP
-
-#include <vector>
+#include "BitcoinExchange.hpp"
 #include <iostream>
+#include <fstream>
+#include <sstream>
 
-class Span
+int main(int ac, char const *av[])
 {
-private:
-    unsigned int N;
-    std::vector<int> hold;
-public:
-    Span();
-    Span(unsigned int N);
-    Span& operator=(const Span& overl);
-    Span(const Span& copy);
-    ~Span();
-    void addNumber(int span);
-    int shortestSpan();
-    int longestSpan();
-    void addSequence(int *tab, unsigned int size);
-    void printS();
-};
-
-#endif
+    (void)ac;
+    (void)av;
+    std::ifstream dataFile("data.csv");
+    //prot
+    std::stringstream test;
+    test << dataFile.rdbuf(); //protect rdbuf
+    // std::string test2(test.str());
+    std::string test2;
+    test >> test2;
+    test >> test2;
+    std::cout << test2 <<'\n';
+    return 0;
+}

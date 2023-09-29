@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 16:17:01 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/08/17 23:48:57 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/09/29 05:13:23 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Dog& Dog::operator=(const Dog &overl)
     std::cout << "Dog Copy assignment operator called" << std::endl;
     if (this != &overl)
     {
-        delete brain;
+        // delete brain;
         type = overl.type;
         brain = new Brain;
         *brain = *overl.brain;
