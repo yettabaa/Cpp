@@ -19,27 +19,33 @@ std::time_t convertDateToSeconds(const std::string& str)
     timeInfo.tm_mday = day;
     // Convert to time_t (seconds since epoch)
     return std::mktime(&timeInfo);
+
 }
 
+template <typename T> 
+T test(int *tab, int size){
+    T tzz(tab, tab + size);
+    return(tzz);
+}
+
+#include <vector>
+#include <deque>
 int main()
 {
-    // std::map<std::time_t, double> map;
-    // std::map<std::string, double>::iterator it;
-    
-    // std::time_t sec; 
+    int tab1[10] = {4,1,2,5,4,10,11,20,90,7};
+    std::vector<int> vec(tab1, tab1 + (sizeof(tab1) / sizeof(int)));
+    std::deque<int> deq(vec.begin(), vec.end());
 
-    // map["test"] = 48;
-    // map["test"] = 45;
-    // map["test"] = 41;
-    // map["test1"] = 4;
+    for (std::deque<int>::iterator it = deq.begin(); it != deq.end(); it++)
+        std::cout << *it << " ";
 
-    // // std::cout << map["test"] <<'\n';
-    // // std::cout << map["test"] <<'\n';
-    // for (it = map.begin(); it != map.end(); it++)
-    //     std::cout << it->first << ' ' << it->second<<'\n';
+        // test <std::vector<int>>(tab1, (sizeof(tab1) / sizeof(int)));
 
-    std::cout << convertDateToSeconds("2000-12-2") <<'\n';
-    std::cout << convertDateToSeconds("2000-12-1") <<'\n';
-    std::cout << sizeof(std::time_t) << '\n';
+
+
+    // std::cout << convertDateToSeconds("2000-12-2") <<'\n';
+    // std::cout << convertDateToSeconds("2000-12-1") <<'\n';
+    // std::cout << sizeof(std::time_t) << '\n';
+
     
 }

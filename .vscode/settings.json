@@ -68,7 +68,9 @@
         "any": "cpp",
         "filesystem": "cpp",
         "numeric": "cpp",
-        "list": "cpp"
+        "list": "cpp",
+        "__tree": "cpp",
+        "map": "cpp"
     },
     "files.autoSave": "afterDelay"
 }
