@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 19:10:56 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/10/02 00:08:53 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/10/02 21:58:28 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,13 +54,14 @@ v_int parsing(char **av, int ac)
 void sortPair(std::pair <int, int> & pair)
 {
     // std::vector<std::pair <int, int > >::iterator it pair;
-    int tmp;
+    // int tmp;
     
-    if (pair.first > pair.second)
+    if (pair.first < pair.second)
     {
-        tmp = pair.first;
-        pair.first = pair.second;
-        pair.second = tmp;
+        std::swap(pair.first , pair.second);
+        // tmp = pair.first;
+        // pair.first = pair.second;
+        // pair.second = tmp;
     }
 }
 
@@ -70,7 +71,7 @@ void sort(const v_int& array)
 
     // (array.size() % 2 == 0) && (size = array.size() / 2);
     // (array.size() % 2 != 0) && (size = array.size() / 2 + 1);
-    std::vector<std::pair <int, int > > pairs(ceil((double)array.size() /2)); //put -1 in the last case of odd
+    std::vector<std::pair <int, int> > pairs(ceil((double)array.size() /2)); //put -1 in the last case of odd
     // std::cout << "size " << ceil((double)array.size() / 2) <<"\n";
     for (std::vector<std::pair <int, int > >::iterator it = pairs.begin(); it != pairs.end(); it++) {
         // std::cout << "fisrt " << (it - pairs.begin()) *2 << " sec " << (it - pairs.begin()) *2 +1 << "\n";
@@ -79,15 +80,21 @@ void sort(const v_int& array)
             it->second = -1;
         else
             it->second = array[(it - pairs.begin()) *2 +1];
+        sortPair(pairs[it - pairs.begin()]); //the function can puted here
     }
-    for (std::vector<std::pair <int, int > >::iterator it = pairs.begin(); it != pairs.end(); it++) {
+    for (std::vector<std::pair <int, int> >::iterator it = pairs.begin(); it != pairs.end(); it++) {
         std::cout << it->first << " " << it->second << " ";
     }
+    // std::for_each(pairs.begin(), pairs.end(), &sortPair);
     std::sort(pairs.begin(), pairs.end());
-    std::for_each(pairs.begin(), pairs.end(), &sortPair);
     puts("");
-    for (std::vector<std::pair <int, int > >::iterator it = pairs.begin(); it != pairs.end(); it++) {
+    v_int zab;
+    for (std::vector<std::pair <int, int> >::iterator it = pairs.begin(); it != pairs.end(); it++) {
+        zab.push_back(it->first);
         std::cout << it->first << " " << it->second << " ";
     }
+    puts("");
+    for(size_t i =0; i < zab.size(); i++)
+        std::cout << zab[i] << " ";
     // return 
 }
