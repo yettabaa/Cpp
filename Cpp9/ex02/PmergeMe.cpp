@@ -6,13 +6,15 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 19:10:56 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/10/04 10:57:22 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/10/04 19:06:46 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PmergeMe.hpp"
 #include <sstream>
 #include <cmath>
+#include <vector>
+#include <deque>
 
 int CheckDigit(const std::string& str)
 {
@@ -23,16 +25,17 @@ int CheckDigit(const std::string& str)
 	return(1);	
 }
 
-v_int parsing(char **av, int ac)
+template <typename T, typename S>
+T parsing(char **av, int ac)
 {
     int tmp;
-    v_int array; //rename
-    string args(av, av + ac -1);
+    T array; //rename
+    S args(av, av + ac -1);
     std::stringstream handler;
     // for(int i=0; i < ac-1; i++)
     //     std::cout << "zab " << args[i] <<'\n';
         
-    for (string::iterator it = args.begin(); it != args.end(); it++) {
+    for (typename S::iterator it = args.begin(); it != args.end(); it++) {
         handler << *it;
         if (!CheckDigit(*it))
             throw std::runtime_error("Error: the argument should contain only digits");
@@ -47,87 +50,77 @@ v_int parsing(char **av, int ac)
     }
     return array;
 }
+// template <typename T>
+// int binarySearch(T arr, int l, int r, int x)
+// {
+//     int m;
+//     while (l <= r) {
+//         m = l + (r - l) / 2;
+ 
+//         // Check if x is present at mid
+//         // printf("arr = %d x = %d\n", arr[m], x);
+//         if (arr[m] == x)
+//             return m;
+//         // If x greater, ignore left half
+//         // if (arr[m] < x)
+//         //     l = m + 1;
+//         (arr[m] < x) ? l = m + 1 : r = m - 1;
+ 
+//         // If x is smaller, ignore right half
+//         // else
+//         //     r = m - 1;
+//     }
+ 
+//     // If we reach here, then element was not present
+//     return l;
+// }
+// template <typename T>
+// void binaryInsert(T& array) {
+//     typename T::iterator itr = array.begin(); 
+//     // for(size_t i = 0; i < array.size(); i++) {
+//     //     std::cout  << array[i] << " ";
+//     // }
+//     // puts("");
+//     // puts("");
+//     // puts("");
+//     for ( size_t i=0; i < array.size(); i++) {
+//         // printf ("%d\n" , itr);
+//         // int pos = itr - array.begin();
+//         size_t binary = binarySearch<T>(array, 0, i, *(itr + i));
+//         if (binary == i)
+//             continue;
+//         int tmp = *(itr + i);
+//         // printf("i = %lu, itr = %d, binary = %d\n", i, *(itr + i), binary);
+//         array.erase(itr + i);
+//         array.insert((itr + binary), tmp);
+//         // for(size_t i = 0; i < array.size(); i++) {
+//         //     std::cout  << array[i] << " ";
+//         // }
+//         // puts("");
+//         // puts("");
+//     }
+// }
 
-std::vector<std::pair <int, int> > createPairs(const v_int& array, v_int& mainChain, v_int& pendingElements)
+void test(char **av, int ac)
 {
-    std::vector<std::pair <int, int> > pairs(array.size() /2);
-
-    for (std::vector<std::pair <int, int > >::iterator it = pairs.begin(); it != pairs.end(); it++) {
-        it->first = array[(it - pairs.begin()) *2];
-        it->second = array[(it - pairs.begin()) *2 +1];
-        if (it->first < it->second)
-            std::swap(it->first , it->second);
-    }
-    std::sort(pairs.begin(), pairs.end());
-    for (std::vector<std::pair <int, int> >::iterator it = pairs.begin(); it != pairs.end(); it++) {
-        mainChain.push_back(it->first);
-        pendingElements.push_back(it->second);
-        if (it == (pairs.end() -1) &&  array.size() % 2 != 0)
-            pendingElements.push_back(*--array.end());
-        // std::cout << it->first << " " << it->second << " ";
-    }
-    return (pairs);
-}
-
-v_int JacobsthalOrder(int n)
-{
-    // long c = 0;
-    long jaco, j;// 2731; //1 3 5 11 21 43 85 171 341 683 1365 2731 5461 
-    std::vector<int> jacobs;
-    std::vector<int> order;
+    clock_t start_time, end_time;
+    // v_int array = parsing(av, ac);
+    // std::vector<int>  array = parsing<std::vector<int>, std::vector<std::string> >(av, ac);
+    // PmergeMe<std::vector<int>, std::vector<std::pair <int, int> > > vect(array);
+    std::deque<int> array1 = parsing<std::deque<int>, std::deque<std::string> >(av, ac);
+    PmergeMe<std::deque<int>, std::deque<std::pair <int, int> > > deq(array1);
     
-    jacobs.push_back(1);
-    order.push_back(1);
-    for(int i = 2; i <= n; i++) {
-        jaco = (std::pow(2, i) + std::pow(-1, i - 1)) / 3; // Jacobsthal formula
-        (n > jaco) &&  (j = jaco);
-        (n <= jaco) &&  (j = n);
-        while (j > *--jacobs.end())
-            order.push_back(j--);
-        if (jaco >= n)
-            break;
-        jacobs.push_back(jaco);
-    }
-    return order;
-    // std::cout << "\nc = " <<c;
-}
-
-v_int sort(const v_int& array)
-{
-    v_int mainChain, insert;
-    std::vector<std::pair <int, int> > pairs = createPairs(array, mainChain, insert);
-    v_int jacobsthalOrder = JacobsthalOrder((int)mainChain.size());
-    size_t order, size = insert.size();
-    // int c = 0;
+    // start_time = clock();
+    // vect.sort();
+    // end_time = clock();
+    // vect.print();
+    // double elapsed_time1 = static_cast<double>(end_time - start_time) / CLOCKS_PER_SEC;
+    // std::cout << "Elapsed time: " << elapsed_time1 << " seconds." << std::endl;
     
-    // std::cout << "mainChain:       ";
-    // for(size_t i = 0; i < mainChain.size(); i++)
-    //     std::cout << mainChain[i] << " ";
-    // puts("");
-    // std::cout << "insert: ";
-    // for(size_t i = 0; i < insert.size(); i++)
-    //     std::cout << insert[i] << " ";
-    // puts("");
-
-    for(size_t i = 0; i < size; i++) {
-        (i < jacobsthalOrder.size()) ? order = jacobsthalOrder[i] - 1 : order = i;
-        for (v_int::iterator it = mainChain.begin(); it != mainChain.end(); it++)
-        {
-            // std::cout <<  (itPairs + order)->first << " ";
-            // printf (" ord = %d pend = %d it = %d\n", order, insert[order], *it);
-            if (insert[order] <= *it || (i == size -1  && it == mainChain.end() - 1)) { // = in this comparison it minimis iteration (time complex) 50 nember 654 ==> 209
-                
-                // printf ("zpend = %d\n",  insert[order]);
-                (i == size -1  && it == mainChain.end() - 1) ? mainChain.insert(++it, insert[order]) : mainChain.insert(it , insert[order]);
-                // if ((i == size -1  && it == mainChain.end() - 1))
-                //     mainChain.push_back(pendingElements[order]);
-                // else
-                //     mainChain.insert(it , pendingElements[order]);
-                break;
-            }
-            // c++;
-        }
-    }
-    // std::cout << "c = " <<c<<"\n";
-    return mainChain;
+    start_time = clock();
+    deq.sort();
+    end_time = clock();
+    deq.print();
+    double elapsed_time1 = static_cast<double>(end_time - start_time) / CLOCKS_PER_SEC;
+    std::cout << "Elapsed time: " << elapsed_time1 << " seconds." << std::endl;   
 }

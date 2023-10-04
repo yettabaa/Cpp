@@ -70,7 +70,8 @@
         "numeric": "cpp",
         "list": "cpp",
         "__tree": "cpp",
-        "map": "cpp"
+        "map": "cpp",
+        "*.tpp": "cpp"
     },
     "files.autoSave": "afterDelay"
 }

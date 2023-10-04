@@ -2,7 +2,7 @@ CC = c++
 
 FLAGS = -Wall -Wextra -Werror -std=c++98 -g #-fsanitize=address
 
-FILES = main.cpp PmergeMe.cpp
+FILES = main.cpp PmergeMe.cpp binarySearch.cpp
 
 OFILES = $(FILES:.cpp=.o)
 
@@ -13,7 +13,7 @@ all:	$(NAME)
 $(NAME):	$(OFILES)
 		$(CC) $(FLAGS) $(OFILES) -o $(NAME)
 
-%.o: %.cpp PmergeMe.hpp
+%.o: %.cpp PmergeMe.hpp PmergeMe.tpp binarySearch.hpp
 	$(CC) $(FLAGS) -c $< -o $@
 
 clean:
