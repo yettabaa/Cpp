@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 19:10:56 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/10/03 14:37:43 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/10/04 10:57:22 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,50 +48,17 @@ v_int parsing(char **av, int ac)
     return array;
 }
 
-void sortPair(std::pair <int, int> & pair)
-{
-    // std::vector<std::pair <int, int > >::iterator it pair;
-    // int tmp;
-    
-    if (pair.first < pair.second)
-    {
-        std::swap(pair.first , pair.second);
-        // tmp = pair.first;
-        // pair.first = pair.second;
-        // pair.second = tmp;
-    }
-}
-
-
 std::vector<std::pair <int, int> > createPairs(const v_int& array, v_int& mainChain, v_int& pendingElements)
 {
-     // size_t size;
+    std::vector<std::pair <int, int> > pairs(array.size() /2);
 
-    // (array.size() % 2 == 0) && (size = array.size() / 2);
-    // (array.size() % 2 != 0) && (size = array.size() / 2 + 1);
-    std::vector<std::pair <int, int> > pairs(array.size() /2); //put -1 in the last case of odd
-    std::cout << "size " << (array.size() / 2) <<"\n";
     for (std::vector<std::pair <int, int > >::iterator it = pairs.begin(); it != pairs.end(); it++) {
-        // std::cout << "fisrt " << (it - pairs.begin()) *2 << " sec " << (it - pairs.begin()) *2 +1 << "\n";
-        //     it->second = array[(it - pairs.begin()) *2 +1];
-        // if (it == (pairs.end() -1) &&  array.size() % 2 != 0)
-        //     it->first = -1;
-        // else
-        //     it->first = array[(it - pairs.begin()) *2];
         it->first = array[(it - pairs.begin()) *2];
         it->second = array[(it - pairs.begin()) *2 +1];
-        // if (it == (pairs.end() -1) &&  array.size() % 2 != 0)
-        //     it->second = -1;
-        // else
-        sortPair(pairs[it - pairs.begin()]); //the function can puted here
+        if (it->first < it->second)
+            std::swap(it->first , it->second);
     }
-    // for (std::vector<std::pair <int, int> >::iterator it = pairs.begin(); it != pairs.end(); it++) {
-    //     std::cout << it->first << " " << it->second << " ";
-    // }
-    // std::for_each(pairs.begin(), pairs.end(), &sortPair);
     std::sort(pairs.begin(), pairs.end());
-    puts("");
-    // v_int zab;
     for (std::vector<std::pair <int, int> >::iterator it = pairs.begin(); it != pairs.end(); it++) {
         mainChain.push_back(it->first);
         pendingElements.push_back(it->second);
@@ -99,94 +66,68 @@ std::vector<std::pair <int, int> > createPairs(const v_int& array, v_int& mainCh
             pendingElements.push_back(*--array.end());
         // std::cout << it->first << " " << it->second << " ";
     }
-    // puts("");
-    // for(size_t i =0; i < zab.size(); i++)
-    //     std::cout << zab[i] << " ";
     return (pairs);
 }
 
 v_int JacobsthalOrder(int n)
 {
-    long jaco,j;// 2731; //1 3 5 11 21 43 85 171 341 683 1365 2731 5461 
     // long c = 0;
+    long jaco, j;// 2731; //1 3 5 11 21 43 85 171 341 683 1365 2731 5461 
     std::vector<int> jacobs;
     std::vector<int> order;
+    
     jacobs.push_back(1);
     order.push_back(1);
     for(int i = 2; i <= n; i++) {
-        // jaco = Jacobsthal(i);
         jaco = (std::pow(2, i) + std::pow(-1, i - 1)) / 3; // Jacobsthal formula
-        // tmp = *--jacobs.end();
-            // std::cout << jaco << " ";
-        (n > jaco) &&  ( j = jaco);
-        (n <= jaco) &&  ( j = n);
+        (n > jaco) &&  (j = jaco);
+        (n <= jaco) &&  (j = n);
         while (j > *--jacobs.end())
-        {
             order.push_back(j--);
-                // c++;
-        }
         if (jaco >= n)
             break;
         jacobs.push_back(jaco);
-        // if ( i == 5)
-        //     break;
     }
-    // puts("");
-    // for(size_t i = 0; i < order.size(); i++)
-    //     std::cout << order[i] << " ";
     return order;
     // std::cout << "\nc = " <<c;
 }
 
 v_int sort(const v_int& array)
 {
-    v_int mainChain, pendingElements;
-    std::vector<std::pair <int, int> > pairs = createPairs(array, mainChain, pendingElements);
+    v_int mainChain, insert;
+    std::vector<std::pair <int, int> > pairs = createPairs(array, mainChain, insert);
     v_int jacobsthalOrder = JacobsthalOrder((int)mainChain.size());
+    size_t order, size = insert.size();
+    // int c = 0;
     
-    std::cout << "mainChain:       ";
-    for(size_t i = 0; i < mainChain.size(); i++)
-        std::cout << mainChain[i] << " ";
-    puts("");
-    std::cout << "pendingElements: ";
-    for(size_t i = 0; i < pendingElements.size(); i++)
-        std::cout << pendingElements[i] << " ";
-    puts("");
-    std::vector<std::pair <int, int> >::iterator itPairs = pairs.begin();
-    // for(itPairs = pairs.begin(); itPairs != pairs.end(); itPairs++) {
-    for(size_t i = 0; i < pairs.size(); i++) {
-        // if (!i)
-        // {
-        //     mainChain.insert(mainChain.begin(), pendingElements[0]);
-        //     continue;
-        // }
-        int order = jacobsthalOrder[i] - 1; //when you subtract the iterator the operator - give you the number of element / how that the substraction substract the adress and divis the resulte by sizeof(type)
-            // std::cout << order << " ";
-        // puts("");
+    // std::cout << "mainChain:       ";
+    // for(size_t i = 0; i < mainChain.size(); i++)
+    //     std::cout << mainChain[i] << " ";
+    // puts("");
+    // std::cout << "insert: ";
+    // for(size_t i = 0; i < insert.size(); i++)
+    //     std::cout << insert[i] << " ";
+    // puts("");
+
+    for(size_t i = 0; i < size; i++) {
+        (i < jacobsthalOrder.size()) ? order = jacobsthalOrder[i] - 1 : order = i;
         for (v_int::iterator it = mainChain.begin(); it != mainChain.end(); it++)
         {
             // std::cout <<  (itPairs + order)->first << " ";
-            printf ("fir=  %d ord = %d pend = %d it = %d\n", (itPairs + order)->first, order, pendingElements[order], *it);
-            if (pendingElements[order] < *it) {
+            // printf (" ord = %d pend = %d it = %d\n", order, insert[order], *it);
+            if (insert[order] <= *it || (i == size -1  && it == mainChain.end() - 1)) { // = in this comparison it minimis iteration (time complex) 50 nember 654 ==> 209
                 
-                printf ("zpend = %d\n",  pendingElements[order]);
-                mainChain.insert(it , pendingElements[order]);
+                // printf ("zpend = %d\n",  insert[order]);
+                (i == size -1  && it == mainChain.end() - 1) ? mainChain.insert(++it, insert[order]) : mainChain.insert(it , insert[order]);
+                // if ((i == size -1  && it == mainChain.end() - 1))
+                //     mainChain.push_back(pendingElements[order]);
+                // else
+                //     mainChain.insert(it , pendingElements[order]);
                 break;
             }
+            // c++;
         }
-        
-        // mainChain.insert(mainChain.begin(), pendingElements[*it - 1]);
     }
-    if (array.size() % 2 != 0)
-        mainChain.push_back(*--pendingElements.end());
-    puts("");
-    // for(v_int::iterator it = jacobsthalOrder.begin(); it != jacobsthalOrder.end(); it++){
-    //     for (v_int::iterator it = mainChain.begin(); it != mainChain; it++)
-    //     {
-    //         /* code */
-    //     }
-        
-    //     mainChain.insert(mainChain.begin(), pendingElements[*it - 1]);
-    // }
+    // std::cout << "c = " <<c<<"\n";
     return mainChain;
 }
