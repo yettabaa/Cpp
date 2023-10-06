@@ -6,7 +6,7 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/30 23:24:57 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/10/01 14:37:41 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/10/06 11:30:38 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,6 @@
 #include<sstream>
 #include<stack>
 
-// int countCharacter(const std::string& str, char target) 
-// {
-// 	int count = 0;
-// 	for (std::string::const_iterator it = str.begin(); it != str.end(); ++it) {
-// 		if (*it == target) {
-// 			count++;
-// 		}
-// 	}
-// 	return count;
-// }
 std::string trim(const std::string& str, const std::string& str1)
 {
     size_t i = 0;
@@ -42,7 +32,7 @@ void checker(std::string &expression)
 {
     if (expression.empty())
             throw std::runtime_error("Error");
-    // std::cout << trim(expression, " ") <<"|\n";
+            
     std::stringstream split(trim(expression, " "));
     std::string tmp;
     expression = "";
@@ -60,13 +50,13 @@ void checker(std::string &expression)
 int RPN(std::string expression)
 {
     checker(expression);
-    std::cout << "expression =    "<< expression <<"|\n";
+    // std::cout << "expression =    |"<< expression <<"|\n";
     std::stack<int> stack;
     int a, b;
     
     for(size_t i = 0; i < expression.length(); i++)
     {
-        if (!std::strchr("+-/*", expression[i]) && std::isdigit(expression[i])){
+        if (!std::strchr("+-/*", expression[i]) && std::isdigit(expression[i])) {
             stack.push(expression[i] - '0');
             continue;
         }
@@ -87,7 +77,7 @@ int RPN(std::string expression)
         else if (expression[i] == '*')
             stack.push(a * b);
     }
-    std::cout << "empty " <<  stack.size() <<"\n";
+    // std::cout << "empty " <<  stack.size() <<"\n";
     if (stack.size() != 1)
         throw std::runtime_error("Error: incorect expression");
     return stack.top();

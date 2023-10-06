@@ -6,20 +6,13 @@
 /*   By: yettabaa <yettabaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 00:56:12 by yettabaa          #+#    #+#             */
-/*   Updated: 2023/09/30 23:20:44 by yettabaa         ###   ########.fr       */
+/*   Updated: 2023/10/06 11:23:04 by yettabaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BitcoinExchange.hpp"
 #include <sstream>
 
-BitcoinExchange::BitcoinExchange()
-{
-}
-
-BitcoinExchange::~BitcoinExchange()
-{
-}
 int countCharacter(const std::string& str, char target) 
 {
 	int count = 0;
@@ -30,6 +23,7 @@ int countCharacter(const std::string& str, char target)
 	}
 	return count;
 }
+
 int CheckDigit(const std::string& str, int flag)
 {
 	int i = -1;
@@ -57,7 +51,6 @@ int Checksign(const std::string& str, int flag)
 
 bool isValidDate(const std::string &str) 
 {
-		// std::cout <<"zab  " << str << "|\n";
 	if (countCharacter(str, '-') != 2 || str[4] != '-' || str[7] != '-')
 		return (false);
 	char c;
@@ -65,27 +58,20 @@ bool isValidDate(const std::string &str)
 	std::stringstream date(str);
 	
 	date >> year >> c >> month >> c >> day;
-	// int year = atoi(str.substr(0, 4).c_str());
-	// int month = atoi(str.substr(5, 2).c_str());
-	// int day = atoi(str.substr(8).c_str());
-	// printf("y = %d m = %d d = %d\n", year, month, day);
 	if (year < 0 || month < 1 || month > 12 || day < 1 || day > 31) 
 		return false;
-	// Check for months with 30 days
 	if ((month == 4 || month == 6 || month == 9 || month == 11) && day > 30)
 		return false;
-	// Check for leap years (February can have 29 days)
 	if (month == 2 && day == 29 && (year % 4 == 0))
 		return true;
-	// Check for February (28 days)
 	if (month == 2 && day > 28)
 		return false;
 	return true;
 }
+
 bool isValidValue(const std::string &str) 
 {
-	// std::cout <<"zab  " << str << "|\n";
-	long value;
+	double value;
 	std::stringstream convert(str);
 
 	if ((Checksign(str, 1) && CheckDigit(str, 1)) ||
@@ -94,7 +80,7 @@ bool isValidValue(const std::string &str)
 		convert >> value;
 		if (str.empty())
 			return (std::cout << "Error: there is no value" << std::endl, false);
-		if ((str.length() > 4 && !countCharacter(str, '-')) || value > 1000)
+		if (value > 1000)
 			return (std::cout << "Error: too large a number." << std::endl, false);
 		if ((countCharacter(str, '-')) || value < 0)
 			return (std::cout << "Error: not a positive number." << std::endl, false);
@@ -103,8 +89,10 @@ bool isValidValue(const std::string &str)
 	return (std::cout << "Error: invalid digit => " << str << std::endl, false);
 }
 
-bool badInput(std::string str)
+bool ErrorHandler(std::string str)
 {
+	if (str.empty())
+		return (std::cout << "Error: empty line " << str << std::endl, true);
 	if (countCharacter(str, '|') != 1 || str[11] != '|')
 		return (std::cout << "Error: bad inpute => " << str << std::endl, true);
 	if (countCharacter(str, ' ') != 2 || str[10] != ' ' || str[12] != ' ')
@@ -113,6 +101,31 @@ bool badInput(std::string str)
 		return (std::cout << "Error: invalid date => " << str << std::endl, true);
 	if (!isValidValue(str.substr(13)))
 		return (true);
-		// return (std::cout << "Error: invalid date => " << str << std::endl, true);
 	return false;  
+}
+
+std::time_t DateToSeconds(const std::string& str) 
+{
+	std::tm timeInfo = {};
+	std::istringstream date(str);
+	int month, day, year;
+	char c;
+	
+	date >> year >> c >> month >> c >> day;
+	timeInfo.tm_year = year - 1900;
+	timeInfo.tm_mon = month - 1;
+	timeInfo.tm_mday = day;
+	return std::mktime(&timeInfo);
+}
+
+double findValue(std::map<std::time_t, double> &dataBase, std::time_t key)
+{
+	std::map<std::time_t, double>::iterator it;
+	
+	for (it = dataBase.begin(); it != dataBase.end(); it++)
+		if (it->first >= key)
+			break;
+	if (it == dataBase.end())
+		return (std::cout << "Error: the date is upper of the last one " , 0);
+	return it->second;
 }
